@@ -1,0 +1,10 @@
+<header class="navbar">
+    <ul>
+        <li><a href="{% url 'home' %}" onclick="toggle()">HOME 首頁</a></li>
+            <li><a href="{% url 'works' %}" onclick="toggle()" >WORKS 作品</a></li>
+            <li><a href="{% url 'about' %}" onclick="toggle()">ABOUT 關於</a></li>
+            <li><a href="{% url 'services' %}" onclick="toggle()">SERVICES 服務</a></li>
+            <li><a href="{% url 'contact' %}" onclick="toggle()">CONTACT 聯絡資訊</a></li>
+    </ul>
+    <div class="toggle" onclick="toggle()"></div>
+</header>

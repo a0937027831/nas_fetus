@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台北室內設計 | 辦公室設計 | 室內裝修設計 | 原胚空間 | 作品列表</title>
+    <meta name='keyword' content="室內設計師推薦,舊屋翻新,老屋翻新,商業空間設計,新屋客變,自地自建,台北設計師,室內設計,設計公司,豪宅設計,室內設計,辦公室設計,商空設計,大坪數裝潢,豪宅裝潢,小坪數裝潢,原胚空間">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/works_list.css' %}">
+</head>
+{% if webinfo.work_list_bg %}
+    <body style="background:url('{{ webinfo.work_list_bg.url }}') no-repeat; background-size: cover;">
+{% else %}
+    <body style="background-color: #ececec;">
+{% endif %}
+    <!-- 導航bar -->
+    {% include 'partials/_navbar.html'%}
+
+    <div class="titlebx">
+        <h1>{{ tag.c_title }}</h1>
+        <div class="line"></div>
+        <p>{{ tag.e_title }}</p>
+    </div>
+    <div class="workrow">
+        {% if projects %}
+            {% for project in projects %}
+            <a href="{% url 'works_detail' tag_id=project.project_tag.id project_id=project.id %}">
+                <div class="workiteam">
+                    <img src="{{ project.preview_img.url }}" alt="">
+                    <div class="details">
+                        <p>{{ project.e_title }}</p>
+                        <p>{{ project.c_title }}</p>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <script src="{% static 'js/navbar.js' %}"></script>
+</body>
+</html>

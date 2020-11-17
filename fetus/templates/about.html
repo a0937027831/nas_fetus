@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台北室內設計 | 辦公室設計 | 室內裝修設計 | 原胚空間 | 關於我</title>
+    <meta name='keyword' content="室內設計師推薦,舊屋翻新,老屋翻新,商業空間設計,新屋客變,自地自建,台北設計師,室內設計,設計公司,豪宅設計,室內設計,辦公室設計,商空設計,大坪數裝潢,豪宅裝潢,小坪數裝潢,原胚空間">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+{% if webinfo.about_bg %}
+    <body style="background:url('{{ webinfo.about_bg.url }}') no-repeat; background-size: cover;">
+{% else %}
+    <body style="background-color: #ececec;">
+{% endif %}
+    <!-- 導航bar -->
+    {% include 'partials/_navbar.html'%}
+
+    <!-- 內容 -->
+    <div class="worksbx">
+        <div class="logo"></div>
+        <div class="line"></div>
+        <div class="text">
+            <h3>理念</h3>
+            <p>每個案子從無到有，需經歷各種打磨修正，最後臻至完美
+            <br>強調每件作品的自然質感，不為設計而設計，我們以功能需
+            <br>求為前提，融合自身美感而創作，讓客戶享受最棒的舒適體驗。
+            </p>
+        </div>
+        <div class="text">
+            <h3>關於原胚</h3>
+            <p>原胚設計最初是由一位熱愛室內設計的年輕小夥子創立，經業界
+                的陶冶，累積出專業素養及個人特色，希望打造出年輕且不受限
+                於固有思維的國際團隊。<br>
+                從圖紙開始，我們在意每條線條的輕重粗細，畫面要乾淨簡要，
+                清楚表達施工細節及尺寸邏輯 ; 設計上，我們整合客戶所需，將
+                設計元素融入其中，量身打造使用者的專屬作品。<br><br>
+                原  不過度設計，而是感受事物的本質<br>
+                胚  醞釀打磨，為了創作最好的
+            </p>
+        </div>
+        <div class="footer">
+            {% if webinfo.phone and webinfo.year %}
+                <p>@{{ webinfo.year }} 原胚設計 │TEL：{{ webinfo.phone }}│</p>
+            {% else %}
+                <p>@2020 原胚設計 │TEL： 0937-738-036│</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="bg"></div>
+    <!--  -->
+
+
+    <!-- script -->
+    <script src="{% static 'js/tools.js' %}"></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
+    <script src="{% static 'js/about.js' %}"></script>
+    <!--  -->
+</body>
+</html>

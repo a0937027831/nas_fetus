@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+/* 中文 font-family: 'Noto Sans TC', sans-serif; */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+}
+
+.worksbx{
+    position: absolute;
+    left: 33%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 630px;
+    height: 376px;
+    transition: 0.5s;
+    /* background: brown; */
+}
+
+.worksbx .logo{
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 125px;
+    height: 160px;
+    background: url(../image/works/works_logo.png) no-repeat;
+    background-size: contain;
+}
+
+.worksbx .line {
+    position: absolute;
+    left: 31%;
+    top: -8%;
+    width: 2px;
+    height: 435px;
+    background: black;
+    display: none;
+}
+
+.worksbx .text{
+    position: absolute;
+    top: -10%;
+    left: 40%;
+    width: 600px;
+    height: 500px;
+}
+
+.worksbx :nth-child(4){
+    top: 35%;
+}
+
+.worksbx .text h3{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+.worksbx .text p{
+    position: relative;
+    top: 4%;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: 5px;
+    font-size: 14px;
+    color: #373e41;
+}
+
+.bg{
+    position: absolute;
+    top: 50%;
+    left: 87%;
+    transform: translate(-50%,-50%);
+    background: url(../image/about/bg4.png) no-repeat;
+    background-size: contain;
+    height: 260px;
+    width: 635px;
+}
+
+body.active .bg{
+    display: none;
+}
+
+body.active .worksbx{
+    left: 43%;
+}
+
+.footer{
+    bottom: -65%;
+    transform: translate(-50%,-50%);
+    left: 30vw;
+}
+
+
+@media(max-width: 992px){
+    body{
+        overflow: unset;
+    }
+
+    .worksbx{
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       left: 50%;
+    }
+
+    .worksbx .logo{
+        position: relative;
+        left: 50%;
+        top: 15%;
+        width: 29vw;
+        height: 29vw;
+        max-width: 125px;
+        max-height: 160px;
+        margin-bottom: 50px;
+        background-position: center;
+    }
+
+    .worksbx .line{
+        left: 50%;
+        top: 15%;
+        transform: translate(-50%,-50%);
+        height: 2px;
+        width: 80vw;
+        display: none;
+    }
+
+    .worksbx .text{
+        position: relative;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        top: 150px;
+        width: 90vw;
+        height: auto;
+        text-align: center;
+        margin-bottom: 200px;
+        /* paddinig-bottom: 200px; */
+    }
+
+    .worksbx .text p{
+        line-height: 32px;
+        font-size: 16px;
+    }
+
+    .bg{
+        display: none;
+    }
+
+    .footer{
+        position: relative;
+        left: 50%;
+        bottom: 0;
+    }
+}

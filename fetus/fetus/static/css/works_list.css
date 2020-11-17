@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* background: #ececec; */
+}
+/* -----------------------   */
+
+.titlebx{
+   position: absolute;
+   left: 50%;
+   top: 20%;
+   transform: translate(-50%,-50%);
+   /* background: cadetblue; */
+   text-align: center;
+}
+
+.titlebx .line{
+    position: relative;
+    height: 1px;
+    width: 50px;
+    background: black;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.titlebx h1{
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.titlebx p{
+    font-size: 34px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.workrow{
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    justify-items: center;
+    /* align-items: center; */
+}
+
+.workrow .workiteam{
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+
+.workrow .workiteam img{
+    position: relative;
+    width: 100%;
+    height: auto;
+    /* object-fit: fill; */
+}
+
+.workrow .workiteam .details{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.workrow .workiteam .details:hover{
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.workrow .workiteam .details p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+    white-space: nowrap;
+    font-family: 'Poppins', sans-serif;
+}
+
+.workrow .workiteam .details p:nth-child(2){
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+
+@media(max-width: 992px){
+    .workrow{
+        grid-template-columns:100%;
+    }
+
+    .workrow .workiteam .details p{
+        font-size: 10vw;
+    }
+
+    .workrow .workiteam .details p:nth-child(2){
+        font-size: 4vw;
+    }
+}

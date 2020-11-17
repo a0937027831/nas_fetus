@@ -1,0 +1,41 @@
+version: "3.7"
+
+services:
+    fetus:
+      build:
+        context: .
+      volumes: 
+       - ./fetus:/fetus
+       - static_data:/vol/web
+      environment:
+        - DB_HOST=db
+        - DB_NAME=fetus
+        - DB_USER=postgres
+        - DB_PASS=supersecretpassword
+        - ALLOWED_HOSTS=127.0.0.1,localhost
+        - DJANGO_SECRET_KEY=djk65das
+        - EMAIL_ACCOUNT=andyfamrykames@gmail.com
+        - EMAIL_PASSWORD=jks86311202
+      depends_on: 
+        - db
+    
+    proxy:
+        build:
+          context: ./proxy
+        volumes: 
+            - static_data:/vol/static
+        ports:
+            - "8000:8000"
+        depends_on: 
+            - fetus
+
+
+    db:
+      image: postgres:12-alpine
+      environment:
+        - POSTGRES_DB=fetus
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=supersecretpassword
+       
+volumes:
+    static_data:

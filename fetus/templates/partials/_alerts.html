@@ -1,0 +1,35 @@
+{% if messages %}
+    {% for message in messages %}
+    <div id="message" class="container" onclick="closebtn()">
+        {% if message.tags == "error" %}
+            <div class="alert" role="alert" style="background: #ff5252; opacity: 1;" onclick="closebtn()">
+        {% elif message.tags == "warning" %}
+            <div class="alert" role="alert" style="background: #ffda79; opacity: 1;" onclick="closebtn()">
+        {% elif message.tags == "success" %}
+            <div class="alert" role="alert" style="background: #dfe4ea; opacity: 1;" onclick="closebtn()">
+        {% elif message.tags == "info" %}
+            <div class="alert" role="alert" style="background: #f7f1e3; opacity: 1;" onclick="closebtn()">
+        {% else %}
+            <div class="alert" role="alert" style="background: #74b9ff; opacity: 1;" onclick="closebtn()">
+        {% endif%}
+                <!-- <button type="button" ></button> -->
+                <strong>
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                        Error:
+                    {% else %}
+                        <!-- {{ message.tags|title }} -->
+                    {% endif %}
+                </strong>
+                <p>{{ message }}</p>
+            </div>
+    </div>
+    {% endfor %}
+{% endif %}
+    <script>
+        function closebtn(){
+            
+            document.getElementById('message').style.display = 'none';
+            document.querySelector('.alert').style.display='none';
+        }
+        setTimeout(()=>{closebtn();},1500);
+    </script>

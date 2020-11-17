@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台北室內設計 | 辦公室設計 | 室內裝修設計 | 原胚空間 | 作品分類</title>
+    <meta name='keyword' content="室內設計師推薦,舊屋翻新,老屋翻新,商業空間設計,新屋客變,自地自建,台北設計師,室內設計,設計公司,豪宅設計,室內設計,辦公室設計,商空設計,大坪數裝潢,豪宅裝潢,小坪數裝潢,原胚空間">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/works.css' %}">
+</head>
+{% if webinfo.work_bg %}
+    <body style="background:url('{{ webinfo.work_bg.url }}') no-repeat; background-size: cover;">
+{% else %}
+    <body style="background-color: #ececec;">
+{% endif %}
+      <!-- navbar -->
+      {% include 'partials/_navbar.html'%}
+
+      <div class="worksbox">
+          <div class="worksboxbg">
+            <div class="workslogo">
+                <div class="content">
+                    <h1>PORJECT | 作品</h1>
+                    {% if tags %}
+                        {% for tag in tags %}
+                        <a href="{% url 'works_list' tag_id=tag.id %}"><p>{{ tag.e_title }}<br>{{ tag.c_title }}</p></a>
+                        {% endfor%}
+                    {% else %}
+                        <a href="{% url 'works_list' tag_id=1 %}"><p>Commercial<br>商  空  設  計</p></a>
+                        <a href="{% url 'works_list' tag_id=2 %}"><p>Residential<br>住  宅  設  計</p></a>
+                    {% endif %}
+                    <div class="line"></div>
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class="footer">
+            {% if webinfo.phone and webinfo.year %}
+                <p>@{{ webinfo.year }} 原胚設計 │TEL：{{ webinfo.phone }}│</p>
+            {% else %}
+                <p>@2020 原胚設計 │TEL： 0937-738-036│</p>
+            {% endif %}
+       </div>
+
+      <script src="{% static 'js/navbar.js' %}"></script>
+</body>
+</html>

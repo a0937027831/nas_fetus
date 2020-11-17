@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+.footer{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%,0);
+    text-align: center;
+}
+
+.footer p{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 350;
+    font-size: 14px;
+    color: rgb(167, 167, 167);
+    white-space:nowrap;
+}

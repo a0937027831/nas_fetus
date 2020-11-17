@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台北室內設計 | 辦公室設計 | 室內裝修設計 | 原胚空間 | 作品</title>
+    <link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
+    <link rel="stylesheet" href="{% static 'css/simplebar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/work_detail.css' %}">
+</head>
+<body>
+    <!-- 導航bar -->
+        {% include 'partials/_navbar.html'%}
+
+      <div class="workbox">
+        <div class="wrapsroll" data-simplebar>
+            {% for project in projects %}
+                {% if project.id == project_id %}
+                <h3 class="title">{{ project.c_title }}</h3>
+                <div class="line"></div>
+                <h1 class="entitle">{{ project.e_title }}</h1>
+                <p class="content">{{ project.body|safe }}</p>
+                    {% for img in project.images.all %}
+                    <a href="{{ img.image.url }}" data-lightbox="mygallery" data-title="{{ img.title }}">
+                        <img src="{{ img.image.url }}">
+                    </a>
+                    {% endfor %}
+                <a href="{% url 'works_list' tag_id=project.project_tag.id %}" style="cursor:pointer" onclick="" class="btn">Back</a>
+                {% endif %}
+            {% endfor%}
+
+        </div>
+      </div>
+
+      <div class="otherWorkbox">
+        <div class="wrapsroll" data-simplebar>
+            {% for project in projects %}
+                {% if project.id is not project_id %}
+                <div class="iteam">
+                    <a href="{% url 'works_detail' tag_id=project.project_tag.id project_id=project.id %}">
+                        <img src="{{ project.preview_img.url }}">
+                        <div class="details">
+                            <div>
+                                <h2>{{ project.c_title }}</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+      </div>
+
+
+      <script src="{% static 'js/navbar.js' %}"></script>
+      <script src="{% static 'js/simplebar.min.js' %}"></script>
+      <script src="{% static 'js/lightbox-plus-jquery.js' %}"></script>
+      <script src="{% static 'js/work_detail.js' %}"></script>
+</body>
+</html>

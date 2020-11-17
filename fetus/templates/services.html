@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台北室內設計 | 辦公室設計 | 室內裝修設計 | 原胚空間 | 服務流程</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/simplebar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+</head>
+{% if webinfo.service_bg %}
+    <body style="background:url('{{ webinfo.service_bg.url }}') no-repeat; background-size: cover;">
+{% else %}
+    <body style="background-color: #ececec;">
+{% endif %}
+    <!-- 導航bar -->
+    {% include 'partials/_navbar.html'%}
+
+    <!-- pc -->
+    <div class="logobg">
+        <div class="boaderbx">
+            <h4>美 學</h4>
+            <p>aesthetics</p>
+            <div class="blodline"></div>
+            <div class="line"></div>
+            <div class="tiltedline"></div>
+        </div>
+        <div class="boaderbx">
+            <h4>專 業</h4>
+            <p>specialty</p>
+            <div class="blodline"></div>
+            <div class="line"></div>
+            <div class="tiltedline"></div>
+        </div>
+        <div class="boaderbx">
+            <h4>熱 忱</h4>
+            <p>enthusiasm</p>
+            <div class="blodline"></div>
+            <div class="line"></div>
+            <div class="tiltedline"></div>
+        </div>
+        <div class="logotitle">
+            <h4>核心價值</h4>
+            <p>Core Values</p>
+        </div>
+    </div>
+    <div class="flow_chartbx">
+        <div class="flow_title">
+            <h4>Service Process 服務流程</h4>
+        </div>
+        <!-- 1 -->
+        <div class="itembx">
+            <p>1<br>初步接洽</p>
+            <p></p>
+            <div class="line"></div>
+            <div class="point"></div>
+        </div>
+        <div class="boldline"></div>
+        <!-- 2 -->
+        <div class="itembx">
+            <p>2<br>現場丈量</p>
+            <p>1 Day</p>
+            <div class="line"></div>
+            <div class="point"></div>
+        </div>
+        <div class="boldline"></div>
+        <!-- 3 -->
+        <div class="itembx">
+            <p>3<br>設計提案</p>
+            <p>~5 Day</p>
+            <div class="line"></div>
+            <div class="point"></div>
+        </div>
+        <div class="boldline"></div>
+        <!-- 4 -->
+        <div class="itembx">
+            <p>4<br>設計委任</p>
+            <p>~3 Day</p>
+            <div class="line"></div>
+            <div class="point"></div>
+        </div>
+        <div class="boldline"></div>
+        <!-- 5 -->
+        <div class="itembx">
+            <p>5<br>細部設計/3D</p>
+            <p>~21 Day</p>
+            <div class="line"></div>
+            <div class="point"></div>
+        </div>
+        <div class="boldline"></div>
+        <!-- 6 -->
+        <div class="itembx">
+            <p>6<br>工程報價</p>
+            <p>~3 Day</p>
+            <div class="line"></div>
+            <div class="point"></div>
+        </div>
+        <!-- 7 -->
+        <div class="itembx">
+            <p>~3 Day</p>
+            <p>7<br>工程簽訂</p>
+            <div class="line"></div>
+            <div class="point"></div>
+        </div>
+        <div class="boldline"></div>
+        <!-- 8 -->
+        <div class="itembx">
+            <p>120~ Day</p>
+            <p>8<br>團隊施工</p>
+            <div class="line"></div>
+            <div class="point"></div>
+        </div>
+        <div class="boldline"></div>
+        <!-- 9 -->
+        <div class="itembx">
+            <p>~3 Day</p>
+            <p>9<br>完工交屋<br>END?</p>
+            <div class="line"></div>
+            <div class="point"></div>
+        </div>
+        <div class="boldline"></div>
+        <!-- 10 -->
+        <div class="itembx">
+            <p>-365 Day</p>
+            <p>10<br>修繕保固</p>
+            <div class="line"></div>
+            <div class="point"></div>
+        </div>
+        <div class="boldline"></div>
+        <!-- 11 -->
+        <div class="itembx">
+            <img src="{% static 'image/services/icon1.png' %}" alt="">
+            <p>11<br>雜症諮詢</p>
+            <div class="line"></div>
+            <div class="point"></div>
+        </div>
+        <div class="boldline"></div>
+        <!-- 12 -->
+        <div class="itembx">
+            <img src="{% static 'image/services/icon3.png' %}" alt="">
+            <p>12<br>一生摯友</p>
+            <div class="line"></div>
+            <div class="point"></div>
+        </div>
+        <svg>
+            <circle cx="100" cy="100" r="100"></circle>
+        </svg>
+    </div>
+    <!-- pc end -->
+    <!-- moble -->
+    <div class="moble_title">
+        <h4>Service Process 服務流程</h4>
+    </div>
+    <div class="moble_flow">
+        <div class="cul"  data-simplebar>
+            <div class="itembx">
+                <div class="point">
+                    <p>1<br>初步接洽</p>
+                </div>
+            </div>
+            <div class="itembx">
+                <div class="point">
+                    <p>2<br>現場丈量<br>1 Day</p>
+                </div>
+            </div>
+            <div class="itembx">
+                <div class="point">
+                    <p>3<br>設計提案<br>~5 Day</p>
+                </div>
+            </div>
+            <div class="itembx">
+                <div class="point">
+                    <p>4<br>設計委任<br>~3 Day</p>
+                </div>
+            </div>
+            <div class="itembx">
+                <div class="point">
+                    <p>5<br>細部設計/3D<br>~21 Day</p>
+                </div>
+            </div>
+            <div class="itembx">
+                <div class="point">
+                    <p>6<br>工程報價<br>~3 Day</p>
+                </div>
+            </div>
+            <div class="itembx">
+                <div class="point">
+                    <p>7<br>工程簽訂<br>~3 Day</p>
+                </div>
+            </div>
+            <div class="itembx">
+                <div class="point">
+                    <p>8<br>團隊施工<br>120~ Day</p>
+                </div>
+            </div>
+            <div class="itembx">
+                <div class="point">
+                    <p>9<br>完工交屋END?<br>~3 Day</p>
+                </div>
+            </div>
+            <div class="itembx">
+                <div class="point">
+                    <p>10<br>修繕保固<br>-365 Day</p>
+                </div>
+            </div>
+            <div class="itembx">
+                <div class="point">
+                    <p>11<br>雜症諮詢</p>
+                </div>
+            </div>
+            <div class="itembx">
+                <div class="point">
+                    <p>12<br>一生摯友</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end moble -->
+
+    <div class="footer">
+        {% if webinfo.phone and webinfo.year %}
+            <p>@{{ webinfo.year }} 原胚設計 │TEL：{{ webinfo.phone }}│</p>
+        {% else %}
+            <p>@2020 原胚設計 │TEL： 0937-738-036│</p>
+        {% endif %}
+    </div>
+
+    <script src="{% static 'js/navbar.js' %}"></script>
+    <script src="{% static 'js/simplebar.min.js' %}"></script>
+    <script src="{% static 'js/tools.js' %}"></script>
+    <script src="{% static 'js/services.js' %}"></script>
+</body>
+</html>

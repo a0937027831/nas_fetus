@@ -1,0 +1,246 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+
+}
+
+/*----- 開頭動畫 --------------- */
+.animateBx .animateBG,
+.animateBx .animateBG2{
+    position: absolute;
+    height: 50%;
+    width: 100vw;
+    background: rgb(240, 240, 240);
+    z-index: 1000;
+    opacity: 0;
+}
+
+
+.animateBx .animateBG{
+    top: 0%;
+}
+
+.animateBx .animateBG2{
+    bottom: 0%;
+}
+
+
+.svgAnimatebx,
+.svgAnimatebx .svgfontbx{
+    position: absolute;
+    z-index: 100;
+    transform: translate(-50%,-50%);
+}
+
+.svgAnimatebx{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40vw;
+    height: 30vw;
+}
+
+.svgAnimatebx .svgfontbx{
+    top: 50%;
+    left: 50%;
+    height: 20%;
+    width: 75.1%;
+}
+
+.svgAnimatebx .svgfontbx svg{
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+#font path{
+    opacity: 10;
+    stroke: #ffffff;
+    fill: rgba(255, 255, 255, 0);
+    stroke-dasharray: 45;
+    /* stroke-dashoffset: 30; */
+    animation: FontAnimate 0.5s cubic-bezier(0,0.23,1,.1) forwards;
+}
+
+#font path:nth-child(2){
+    animation-delay: 0.2s;
+}
+#font path:nth-child(3){
+    animation-delay: 0.4s;
+}
+#font path:nth-child(4){
+    animation-delay: 0.6s;
+}
+#font path:nth-child(5){
+    animation-delay: 0.8s;
+}
+#font path:nth-child(6){
+    animation-delay: 1s;
+}
+#font path:nth-child(7){
+    animation-delay: 1.2s;
+}
+#font path:nth-child(8){
+    animation-delay: 1.4s;
+}
+#font path:nth-child(9){
+    animation-delay: 1.6s;
+}
+#font path:nth-child(10){
+    animation-delay: 1.8s;
+}
+#font path:nth-child(11){
+    animation-delay: 2.0s;
+}
+
+@keyframes FontAnimate{
+    0%{
+        /* stroke-dasharray: 45; */
+        opacity: 0;
+        fill: none;
+        stroke-dashoffset: 45;
+    }
+    30%{
+        stroke: #ffffff;
+        opacity: 10;
+        stroke-dashoffset: 45;
+    }
+    90%{
+        fill: rgba(0, 0, 0, 0.178);
+    }
+    100%{
+        stroke: #000000;
+        stroke-dashoffset: 0;
+        fill: rgb(0, 0, 0);
+    }
+}
+/* ------------------------------- */
+
+.circlebx{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    height: 450px;
+}
+
+.circlebg .clip_circle{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+
+}
+
+.banner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    clip-path: circle(450px at center);
+}
+
+.circlebx .circleline{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-radius: 50%;
+    border-width: 2px;
+    color: rgb(214, 212, 212);
+    z-index: 100;
+}
+
+.circlebx .circleline2{
+    position: absolute;
+    width: 105%;
+    height: 105%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    border-width: 2px;
+    border-right: solid 3px;
+    /* border-right: hidden; */
+    border-top: hidden;
+    border-bottom: hidden;
+    border-left: solid 3px;
+    color: #ececec;
+    -webkit-animation: rote 3s linear infinite;
+    -moz-animation:    rote 3s linear infinite;
+    -o-animation:      rote 3s linear infinite;
+    animation: rote 5s linear infinite;
+}
+
+
+@keyframes rote{
+    0%{
+        transform:translate(-50%,-50%) rotate(0deg);
+        color: #ececec;
+    }
+    50%{
+        color: rgb(194, 194, 194);
+    }
+    100%{
+        transform:translate(-50%,-50%) rotate(360deg);
+        color: #ececec;
+    }
+}
+
+/* ---- indicator ------- */
+.indicator {
+    position: absolute;
+    top: 82vh;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 20;
+}
+
+.indicator div{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 10px;
+    /* background: gray; */
+    border-style: solid;
+    border-radius: 50%;
+    border-width: 2px;
+    color: rgb(189, 189, 189);
+}
+
+.indicator div.active{
+    /* background: rgba(226, 223, 220, 0); */
+    color: rgb(170, 163, 163);
+}
+/* ---------------- */
+
+
+@media(max-width: 992px){
+    .circlebx{
+        width: 80vw ;
+        height: 80vw ;
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+    .banner{
+        clip-path: circle(350px at center);
+    }
+
+    .indicator {
+        top: 80vh;
+    }
+}
