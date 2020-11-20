@@ -12,8 +12,8 @@ USER root
 
 RUN mkdir -p /vol/static
 RUN mkdir -p /etc/nginx/ssl/fetus
-COPY ./archive/cert.pem /etc/nginx/fetus/cert.pem
-COPY ./archive/privkey.pem /etc/ssl/fetus/privkey.pem
+COPY ./archive/cert.pem /etc/nginx/ssl/fetus/cert.pem
+COPY ./archive/privkey.pem /etc/nginx/ssl/fetus/privkey.pem
 RUN chmod 755 /vol/static
 RUN touch /etc/nginx/conf.d/default.conf
 RUN chown nginx:nginx /etc/nginx/conf.d/default.conf /etc/nginx/ssl/fetus/cert.pem /etc/nginx/ssl/fetus/privkey.pem
