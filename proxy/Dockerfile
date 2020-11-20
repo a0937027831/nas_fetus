@@ -11,7 +11,7 @@ ENV APP_PORT=9000
 USER root
 
 RUN mkdir -p /vol/static
-RUN mkdir /etc/nginx/ssl/fetus
+RUN mkdir -p /etc/nginx/ssl/fetus
 COPY ./archive/cert.pem /etc/nginx/fetus/cert.pem
 COPY ./archive/privkey.pem /etc/ssl/fetus/privkey.pem
 RUN chmod 755 /vol/static
