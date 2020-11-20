@@ -1,4 +1,3 @@
-user  nginx;
 error_log  /var/log/nginx/error.log warn;
 
 server {
