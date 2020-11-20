@@ -13,7 +13,9 @@ USER root
 RUN mkdir -p /vol/static
 RUN chmod 755 /vol/static
 RUN touch /etc/nginx/conf.d/default.conf
-RUN chown nginx:nginx /etc/nginx/conf.d/default.conf
+RUN chown nginx:nginx /etc/nginx/conf.d/default.conf /etc/ssl/fetus/archive/cert.pem /etc/ssl/fetus/archive/privkey.pem
+
+
 
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
