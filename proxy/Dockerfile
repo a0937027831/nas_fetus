@@ -4,7 +4,7 @@ LABEL maintainer="a0937027831@gmail.com"
 COPY ./default.conf.tpl /etc/nginx/default.conf.tpl
 COPY ./uwsgi_params /etc/nginx/uwsgi_params
 
-ENV LISTEN_PORT=8000
+ENV LISTEN_PORT=443
 ENV APP_HOST=fetus
 ENV APP_PORT=9000
 

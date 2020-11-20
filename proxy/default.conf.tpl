@@ -1,5 +1,13 @@
+user  nginx;
+
+error_log  /var/log/nginx/error.log warn;
+
 server {
-    listen ${LISTEN_PORT};
+    listen ${LISTEN_PORT} ssl;
+    server_name fetus.i234.me
+
+    ssl_certificate             /etc/ssl/fetus/archive/cert.pem
+    ssl_certificate_key         /etc/ssl/fetus/archive/privkey.pem
 
     location /static {
         alias /vol/static;
