@@ -3,8 +3,8 @@ error_log  /var/log/nginx/error.log warn;
 server {
     listen ${LISTEN_PORT} ;
 
-    ssl_certificate             /etc/ssl/fetus/cert.pem;
-    ssl_certificate_key         /etc/ssl/fetus/privkey.pem;
+    ssl_certificate             /etc/nginx/ssl/fetus/cert.pem;
+    ssl_certificate_key         /etc/nginx/ssl/fetus/privkey.pem;
 
     location /static {
         alias /vol/static;
