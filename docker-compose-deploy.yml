@@ -36,6 +36,8 @@ services:
         - POSTGRES_DB=fetus
         - POSTGRES_USER=postgres
         - POSTGRES_PASSWORD=supersecretpassword
+      volumes: 
+        - "./pgDB:/volume1/docker/pgDB"
 
 volumes:
     static_data:
