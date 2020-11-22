@@ -2,6 +2,7 @@ import uuid
 import os
 from django.db import models
 from django_cleanup import cleanup
+from colorfield.fields import ColorField
 
 
 def image_file_path(instance,filename):
@@ -22,5 +23,10 @@ class Webinfo(models.Model):
     service_bg = models.ImageField(upload_to = image_file_path,blank=True,default='',help_text='服務背景')
     about_bg = models.ImageField(upload_to = image_file_path,blank=True,default='',help_text='關於我背景')
     contact_bg = models.ImageField(upload_to = image_file_path,blank=True,default='',help_text='聯絡我背景')
-
+    home_title_color = ColorField(default="#FFFFFF",help_text='主頁 標題顏色')
+    work_title_color = ColorField(default="#FFFFFF",help_text='作品分類 標題顏色')
+    work_list_title_color = ColorField(default="#FFFFFF",help_text='作品列表 標題顏色')
+    service_title_color = ColorField(default="#FFFFFF",help_text='服務 標題顏色')
+    about_title_color = ColorField(default="#FFFFFF",help_text='關於我 標題顏色')
+    contact_title_color = ColorField(default="#FFFFFF",help_text='聯絡我 標題顏色')
 

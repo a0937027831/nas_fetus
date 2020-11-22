@@ -123,6 +123,7 @@ body{
 }
 /* ------------------------------- */
 
+
 .circlebx{
     position: absolute;
     top: 50%;
@@ -162,6 +163,7 @@ body{
     border-width: 2px;
     color: rgb(214, 212, 212);
     z-index: 100;
+    display: none;
 }
 
 .circlebx .circleline2{
@@ -183,6 +185,7 @@ body{
     -moz-animation:    rote 3s linear infinite;
     -o-animation:      rote 3s linear infinite;
     animation: rote 5s linear infinite;
+    display: none;
 }
 
 

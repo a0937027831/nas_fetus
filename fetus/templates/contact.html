@@ -11,13 +11,26 @@
     <link rel="stylesheet" href="{% static 'css/alerts.css' %}">
     <link rel="stylesheet" href="{% static 'css/contact.css' %}">
 </head>
+    <body>
+    <!-- 背景 -->
     {% if webinfo.contact_bg %}
-        <body style="background:url('{{ webinfo.contact_bg.url }}') no-repeat; background-size: cover;">
+        <div class="bg" style="background:url('{{ webinfo.contact_bg.url }}') no-repeat; background-size: cover; background-position: center;"></div>
     {% else %}
-        <body style="background-color: #ffffff;">
+        <div class="bg" style="background-color: #ececec;"></div>
     {% endif %}
+    <!--  -->
+
     <!-- 導航bar -->
-    {% include 'partials/_navbar.html'%}
+    <header class="navbar">
+        <ul>
+            <li><a href="{% url 'home' %}" onclick="toggle()" style="color:{{ webinfo.contact_title_color }};">HOME 首頁</a></li>
+            <li><a href="{% url 'works' %}" onclick="toggle()" style="color:{{ webinfo.contact_title_color }};">WORKS 作品</a></li>
+            <li><a href="{% url 'about' %}" onclick="toggle()" style="color:{{ webinfo.contact_title_color }};">ABOUT 關於</a></li>
+            <li><a href="{% url 'services' %}" onclick="toggle()" style="color:{{ webinfo.contact_title_color }};">SERVICES 服務</a></li>
+            <li><a href="{% url 'contact' %}" onclick="toggle()"style="color:{{ webinfo.contact_title_color }};">CONTACT 聯絡資訊</a></li>
+        </ul>
+            <div class="toggle" onclick="toggle()"></div>
+    </header>
 
     <!-- 資訊 -->
     <div class="contactInfo">

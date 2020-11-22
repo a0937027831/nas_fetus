@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'projects.apps.ProjectsConfig',
     'ckeditor',
     'django_cleanup.apps.CleanupConfig',
+    'colorfield',
 ]
 
 MIDDLEWARE = [
