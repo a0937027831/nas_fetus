@@ -179,7 +179,7 @@ function RemoveStyle(){
 //#endregion
 
 
-Get('https://www.fetusdesign.com/bannerJson');
+Get('https://fetus.i234.me/bannerJson');
 circleIndicator();
 OpenAnimation();
 setTimeout(()=>{setInterval(autoPlay,5000);},5000);
