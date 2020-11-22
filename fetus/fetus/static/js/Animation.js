@@ -40,150 +40,156 @@ let count = 0;
 let run = true;
 var bannerArray=[];
 
-function Get(URL){
-  var request = new XMLHttpRequest();
-  request.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      MakeBannerList(JSON.parse(request.responseText),'');
-    }else{
-      console.log('status :'+request.statusText);
+// 開始倫播
+function StartBannerPlay() {
+    CircleIndicator();
+    addImage(1);
+    setTimeout(() => { setInterval(autoPlay, 5000); }, 5000);
+}
+// --------
+
+// 播放更改count
+function autoPlay() {
+    if (!run)
+        return;
+    count++;
+    if (count == imageArray.length) {
+        count = 0;
     }
-  };
-  request.open('GET', URL ,true);
-  request.send();
+    changeSide();
+}
+//
+
+function Get(URL) {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            MakeBannerList(JSON.parse(request.responseText), '');
+        } else {
+            // console.log('status num: ' + status);
+            if (this.status == '404') {
+                // console.log('獲取url失敗 使用預設');
+                console.log('status :' + request.statusText);
+                StartBannerPlay();
+            }
+        }
+    };
+    request.open('GET', URL, true);
+    request.send();
 }
 
-function MakeBannerList(requestjson){
-  try {
-    if(requestjson[0].image1 == '' || requestjson[0].image1 == null ){
-      return;
+
+// 把資料塞進去
+function MakeBannerList(requestjson) {
+    try {
+        if (requestjson[0].image1 == '' || requestjson[0].image1 == null) {
+            // console.log('Banner沒資料 使用預設');
+            StartBannerPlay();
+            return;
+        }
+    } catch (error) {
+        console.error(error);
+        return;
     }
-  } catch (error) {
-    console.error(error);
-    return;
-  }
+    // console.log('Banner 有資料 使用後台資料');
+    imageArray.splice(0, imageArray.length);
+    addlist(imageArray, requestjson[0].image1);
+    addlist(imageArray, requestjson[0].image2);
+    addlist(imageArray, requestjson[0].image3);
+    addlist(imageArray, requestjson[0].image4);
+    addlist(imageArray, requestjson[0].image5);
+    StartBannerPlay();
+}
+// --------------------------------
 
-  imageArray.splice(0,imageArray.length);
-  // console.log(imageArray);
-  addlist(imageArray,requestjson[0].image1);
-  addlist(imageArray,requestjson[0].image2);
-  addlist(imageArray,requestjson[0].image3);
-  addlist(imageArray,requestjson[0].image4);
-  addlist(imageArray,requestjson[0].image5);
-  // console.log(imageArray);
-  resetCircleIndicator();
+function changeSide() {
+    if (imageArray.length > 1) {
+        updateCircleIndicator();
+        addImage(0);
+        slide();
+        setTimeout(deletePreviousImage(), 1000);
+    }
 }
 
-function addlist(array,str){
-  if(!isEmpty(str)){
-    array.push(str);
-  }
+function indicateSlide(element) {
+    if (count == element.id) {
+        return;
+    }
+    count = element.id;
+    run = false;
+    setTimeout(() => { run = true; }, 5000);
+    changeSide();
 }
 
-function autoPlay(){
-  if(!run)
-    return;
-  count++;
-  if(count == imageArray.length){
-     count = 0;
-  }
-  changeSide();
+// 製作下方選項圈圈
+function CircleIndicator() {
+    console.log("indicator.children.length" + indicator.children.length);
+    for (i = indicator.children.length; i < imageArray.length; i++) {
+        const div = document.createElement("div");
+        div.setAttribute("onclick", "indicateSlide(this)");
+        div.id = i;
+        indicator.appendChild(div);
+    }
+    for (i = indicator.children.length; i > imageArray.length; i--) {
+        console.log(i - 1)
+        indicator.children[i - 1].remove();
+    }
+    indicator.children[0].className = "active";
 }
 
-function changeSide(){
-    updateCircleIndicator();
-    addImage();
-    slide();
-    setTimeout(deletePreviousImage(),1000);
-}
-
-function indicateSlide(element){
-  if(count == element.id){
-    return;
-  }
-  count = element.id;
-  run = false;
-  setTimeout(()=>{run = true;}, 5000);
-  changeSide();
-}
-
-function circleIndicator(){
-  for( i=0; i<imageArray.length; i++){
-    const div = document.createElement("div");
-    div.setAttribute("onclick","indicateSlide(this)")
-    div.id = i;
-    if(i==0)
-      div.className="active";
-    indicator.appendChild(div);
-  }
-}
-
-function resetCircleIndicator(){
-  for(i= indicator.children.length; i<imageArray.length; i++){
-    const div = document.createElement("div");
-    div.setAttribute("onclick","indicateSlide(this)");
-    div.id = i;
-    indicator.appendChild(div);
-  }
-
-  for(i= indicator.children.length; i>imageArray.length; i--){
-      console.log(i-1)
-      indicator.children[i-1].remove();
-  }
-}
-
-function updateCircleIndicator(){
-  if(imageArray.length == 1){
-    return;
-  }else{
-    for(i= 0; i<indicator.children.length; i++){
-      indicator.children[i].classList.remove('active');
+// 下面圈圈倫播轉動功能
+function updateCircleIndicator() {
+    for (i = 0; i < indicator.children.length; i++) {
+        indicator.children[i].classList.remove('active');
     }
     indicator.children[count].classList.add('active');
-  }
 }
 
-function addImage(){
-  let nextImage = imageArray[count];
-  let img = document.createElement('img');
-  img.src = nextImage;
-  img.style.opacity = '0';
-  img.classList.add("banner");
-  clip_circle.appendChild(img);
+function addImage(opacity) {
+    let nextImage = imageArray[count];
+    let img = document.createElement('img');
+    img.src = nextImage;
+    img.style.opacity = opacity;
+    img.classList.add("banner");
+    clip_circle.appendChild(img);
 }
 
-function slide(){
+function slide() {
     let allImages = document.querySelectorAll(".banner");
-    TweenMax.to(allImages[0],1,{opacity:"0",ease:"power1.out"});
-    TweenMax.to(allImages[1],1,{opacity:"1",ease: "circ.in"});
+    TweenMax.to(allImages[0], 1, { opacity: "0", ease: "power1.out" });
+    TweenMax.to(allImages[1], 1, { opacity: "1", ease: "circ.in" });
 }
 
-function deletePreviousImage(){
-  let allImages = document.querySelectorAll(".banner");
-  let currentImage = allImages[0];
-  currentImage.remove();
+function deletePreviousImage() {
+    let allImages = document.querySelectorAll(".banner");
+    let currentImage = allImages[0];
+    currentImage.remove();
 }
 
 //#region 刪除style
 let IsMoble = detectMob();
-function AutoReMove(){
-  let check = detectMob();
-  if(IsMoble != check){
-     check = IsMoble;
-     document.querySelector('.circlebx').removeAttribute("style");
-  }
+function AutoReMove() {
+    let check = detectMob();
+    if (IsMoble != check) {
+        check = IsMoble;
+        document.querySelector('.circlebx').removeAttribute("style");
+    }
 }
-function RemoveStyle(){
-  document.querySelector('.circlebx').removeAttribute("style");
+function RemoveStyle() {
+    document.querySelector('.circlebx').removeAttribute("style");
 }
 //#endregion
 
+// 功能 陣列增加
+function addlist(array, str) {
+    if (!isEmpty(str)) {
+        array.push(str);
+    }
+}
 
 Get('https://fetus.i234.me/bannerJson');
-circleIndicator();
 OpenAnimation();
-setTimeout(()=>{setInterval(autoPlay,5000);},5000);
-setTimeout(()=>{RemoveStyle();},6000);
+setTimeout(() => { RemoveStyle(); }, 6000);
 
 
 
