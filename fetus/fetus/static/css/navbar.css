@@ -49,6 +49,11 @@ header ul li a{
     white-space:nowrap;
 }
 
+header ul li a:hover{
+    font-size: 16px;
+}
+
+
 @keyframes FadeIn{
     0%{
         opacity: 0;
