@@ -83,7 +83,7 @@
 
     <div class="footer">
         {% if webinfo.phone and webinfo.year %}
-            <p>@{{ webinfo.year }} 原胚設計 │TEL：{{ webinfo.phone }}│</p>
+            <p style="color:{{ webinfo.footer_text_color}};">@{{ webinfo.year }} 原胚設計 │TEL：{{ webinfo.phone }}│</p>
         {% else %}
             <p>@2020 原胚設計 │TEL： 0937-738-036│</p>
         {% endif %}

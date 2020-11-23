@@ -36,15 +36,16 @@
         <div class="logo"></div>
         <div class="line"></div>
         <div class="text">
-            <h3>理念</h3>
-            <p>每個案子從無到有，需經歷各種打磨修正，最後臻至完美
+            <h3 style="color:{{ webinfo.about_title_text_color }};">理念</h3>
+            <p style="color:{{ webinfo.about_text_color }};">每個案子從無到有，需經歷各種打磨修正，最後臻至完美
             <br>強調每件作品的自然質感，不為設計而設計，我們以功能需
             <br>求為前提，融合自身美感而創作，讓客戶享受最棒的舒適體驗。
             </p>
         </div>
         <div class="text">
-            <h3>關於原胚</h3>
-            <p>原胚設計最初是由一位熱愛室內設計的年輕小夥子創立，經業界
+            <h3 style="color:{{ webinfo.about_title_text_color }};">關於原胚</h3>
+            <p style="color:{{ webinfo.about_text_color }};">
+                原胚設計最初是由一位熱愛室內設計的年輕小夥子創立，經業界
                 的陶冶，累積出專業素養及個人特色，希望打造出年輕且不受限
                 於固有思維的國際團隊。<br>
                 從圖紙開始，我們在意每條線條的輕重粗細，畫面要乾淨簡要，
@@ -56,13 +57,13 @@
         </div>
         <div class="footer">
             {% if webinfo.phone and webinfo.year %}
-                <p>@{{ webinfo.year }} 原胚設計 │TEL：{{ webinfo.phone }}│</p>
+                <p style="color:{{ webinfo.footer_text_color}};">@{{ webinfo.year }} 原胚設計 │TEL：{{ webinfo.phone }}│</p>
             {% else %}
                 <p>@2020 原胚設計 │TEL： 0937-738-036│</p>
             {% endif %}
         </div>
     </div>
-    <div class="bg"></div>
+    <div class="blackbg"></div>
     <!--  -->
 
 

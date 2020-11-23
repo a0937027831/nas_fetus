@@ -72,7 +72,7 @@ body{
     color: #373e41;
 }
 
-.bg{
+.blackbg{
     position: absolute;
     top: 50%;
     left: 87%;
@@ -83,7 +83,7 @@ body{
     width: 635px;
 }
 
-body.active .bg{
+body.active .blackbg{
     display: none;
 }
 
@@ -148,7 +148,7 @@ body.active .worksbx{
         font-size: 16px;
     }
 
-    .bg{
+    .blackbg{
         display: none;
     }
 

@@ -29,4 +29,10 @@ class Webinfo(models.Model):
     service_title_color = ColorField(default="#FFFFFF",help_text='服務 標題顏色')
     about_title_color = ColorField(default="#FFFFFF",help_text='關於我 標題顏色')
     contact_title_color = ColorField(default="#FFFFFF",help_text='聯絡我 標題顏色')
+    works_text_color = ColorField(default="#FFFFFF",help_text='作品分類 下方選擇顏色')
+    about_title_text_color = ColorField(default="#FFFFFF",help_text='關於我 下方標題選擇顏色')
+    about_text_color = ColorField(default="#FFFFFF",help_text='關於我 下方文字顏色')
+    service_title_text_color = ColorField(default="#FFFFFF",help_text='服務 下方標題文字顏色')
+    service_text_color = ColorField(default="#FFFFFF",help_text='服務 下方文字顏色')
+    footer_text_color = ColorField(default="#FFFFFF",help_text='網頁最下方文字顏色(@2020~)')
 
