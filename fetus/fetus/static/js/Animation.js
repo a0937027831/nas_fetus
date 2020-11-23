@@ -218,9 +218,10 @@ function addlist(array,str){
 }
 
 
-Get('http://127.0.0.1:8000/bannerJson');
+Get('https://fetus.i234.me/bannerJson');
 OpenAnimation();
-setTimeout(()=>{RemoveStyle();},6000);
+setTimeout(() => { RemoveStyle(); }, 6000);
+
 
 
 
