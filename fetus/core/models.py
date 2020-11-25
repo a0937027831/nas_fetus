@@ -36,3 +36,8 @@ class Webinfo(models.Model):
     service_text_color = ColorField(default="#FFFFFF",help_text='服務 下方文字顏色')
     footer_text_color = ColorField(default="#FFFFFF",help_text='網頁最下方文字顏色(@2020~)')
 
+    updated_at = models.DateTimeField(auto_now=True,help_text='更新日期')
+
+    class Meta:
+        ordering = ('-updated_at',)
+

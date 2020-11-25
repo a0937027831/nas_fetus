@@ -14,6 +14,10 @@ class Banner(models.Model):
     image3 = models.ImageField(upload_to = image_file_path,blank=True,default='',help_text='封面3 寬:450px 高:450px')
     image4 = models.ImageField(upload_to = image_file_path,blank=True,default='',help_text='封面4 寬:450px 高:450px')
     image5 = models.ImageField(upload_to = image_file_path,blank=True,default='',help_text='封面5 寬:450px 高:450px')
+    update_at = models.DateTimeField(auto_now=True,help_text='更新日期')
+
+    class Meta:
+        ordering = ('-update_at',)
 
 class CustomerContact(models.Model):
     name = models.CharField(max_length=200,default='',help_text='姓名')

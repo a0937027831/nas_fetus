@@ -82,22 +82,22 @@ function Get(URL){
 // 把資料塞進去
 function MakeBannerList(requestjson){
   try {
-    if(requestjson[0].image1 == '' || requestjson[0].image1 == null ){
+    if(requestjson.image1 == '' || requestjson.image1 == null ){
       // console.log('Banner沒資料 使用預設');
       StartBannerPlay();
       return;
     }
-  } catch (error) {
-    console.error(error);
+  } catch (e) {
+    console.error('json error'+e);
     return;
   }
   // console.log('Banner 有資料 使用後台資料');
   imageArray.splice(0,imageArray.length);
-  addlist(imageArray,requestjson[0].image1);
-  addlist(imageArray,requestjson[0].image2);
-  addlist(imageArray,requestjson[0].image3);
-  addlist(imageArray,requestjson[0].image4);
-  addlist(imageArray,requestjson[0].image5);
+  addlist(imageArray,requestjson.image1);
+  addlist(imageArray,requestjson.image2);
+  addlist(imageArray,requestjson.image3);
+  addlist(imageArray,requestjson.image4);
+  addlist(imageArray,requestjson.image5);
   StartBannerPlay();
 }
 // --------------------------------

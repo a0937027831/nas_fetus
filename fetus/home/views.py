@@ -13,24 +13,23 @@ from django.core.exceptions import ValidationError
 # Create your views here.
 
 def home(request):
-    webinfo = get_object_or_404(Webinfo,pk=1)
-    banner = Banner.objects.get(id=1)
-    context = {'webinfo': webinfo,'banner':banner}
+    webinfo = Webinfo.objects.all()[0]
+    context = {'webinfo': webinfo}
     return render(request,'home.html',context)
 
 
 def about(request):
-    webinfo = get_object_or_404(Webinfo,pk=1)
+    webinfo = Webinfo.objects.all()[0]
     context = {'webinfo': webinfo}
     return render(request,'about.html',context)
 
 def services(request):
-    webinfo = get_object_or_404(Webinfo,pk=1)
+    webinfo = Webinfo.objects.all()[0]
     context = {'webinfo': webinfo}
     return render(request,'services.html',context)
 
 def contact(request):
-    webinfo = get_object_or_404(Webinfo,pk=1)
+    webinfo = Webinfo.objects.all()[0]
     context = {'webinfo': webinfo}
     return render(request,'contact.html',context)
 
@@ -65,7 +64,6 @@ def sendmessage(request):
 
 @require_http_methods(["GET"])
 def banner(request):
-    jsonBanner = Banner.objects.all()
-    jsonBanner = BannerSerializer(jsonBanner,many=True)
-
+    jsonBanner = Banner.objects.all()[0]
+    jsonBanner = BannerSerializer(jsonBanner,many=False)
     return JsonResponse(jsonBanner.data,safe=False)
