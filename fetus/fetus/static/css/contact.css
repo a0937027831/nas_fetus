@@ -85,7 +85,7 @@ body.active .contactform .formBox .inputBox input[type="submit"]{
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 2px;
-    color: #333333;
+    color: #ffffff;
     transition: 0.5s;
     pointer-events: none;
 }
