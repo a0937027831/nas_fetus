@@ -160,6 +160,7 @@ body.active .contactInfo .btn:nth-child(4){
     height: 160px;
     background: url(../image/works/works_logo.png) no-repeat;
     background-size: contain;
+    display: none;
 }
 
 .contactInfo .logo::before{
@@ -178,7 +179,7 @@ body.active .contactInfo .btn:nth-child(4){
 
 .contactInfo p{
     position: relative;
-    top: 52.5%;
+    top: 25.5%;
     left: 10%;
     font-size: 14px;
     font-weight: 300;
@@ -190,7 +191,7 @@ body.active .contactInfo .btn:nth-child(4){
 
 .contactInfo .linkIcon{
     position: absolute;
-    top: 80%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 400px;

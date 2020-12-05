@@ -29,7 +29,6 @@ services:
         depends_on:
             - fetus
 
-
     db:
       image: postgres:12-alpine
       environment:
