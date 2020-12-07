@@ -37,6 +37,7 @@ class Project(models.Model):
     preview_img = models.ImageField(upload_to = preview_img_file_path,default='',help_text = '外部顯示圖片(寬:2667 高:1440)')
     project_tag = models.ForeignKey(Tags,related_name='p_tag',on_delete = models.CASCADE,default='', null=True,help_text='案子類別')
     body = RichTextField(blank=True,null=True,help_text='案子文字敘述')
+    lock = models.BooleanField(default=False,help_text="隱藏專案")
     created_at = models.DateTimeField(auto_now_add=True,help_text='創建日期')
     updated_at = models.DateTimeField(auto_now=True,help_text='更新日期')
     def __str__(self):

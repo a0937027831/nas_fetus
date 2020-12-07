@@ -27,7 +27,7 @@ def works(request):
 
 def works_list(request,tag_id):
     webinfo = get_object_or_404(Webinfo,pk=1)
-    projects = get_list_or_404(Project,project_tag__id = tag_id)
+    projects = get_list_or_404(Project,project_tag__id = tag_id,lock=False)
     tag = get_object_or_404(Tags,pk=tag_id)
     context = {'webinfo':webinfo,'projects':projects,'tag':tag}
     return render(request,'work_list.html',context)
@@ -36,7 +36,7 @@ def works_detail(request,tag_id,project_id):
     print('tag_id :'+ tag_id)
     print('project_id :'+project_id)
     project_id = int(project_id)
-    projects = get_list_or_404(Project,project_tag__id = tag_id)
+    projects = get_list_or_404(Project,project_tag__id = tag_id,lock=False)
     context = {'projects': projects,'project_id':project_id}
     return render(request,'work_detail.html',context)
 

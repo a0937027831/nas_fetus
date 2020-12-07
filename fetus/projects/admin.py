@@ -3,7 +3,7 @@ from .models import ImageInfo,Tags,Project
 # Register your models here.
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('c_title','e_title','project_tag','created_at','updated_at')
+    list_display = ('c_title','e_title','project_tag','created_at','updated_at','lock')
     readonly_fields = ('created_at','updated_at')
 
 class TagsAdmin(admin.ModelAdmin):
