@@ -6,9 +6,9 @@
     box-sizing: border-box;
 }
 
-body{
-    /* background: #ececec; */
-}
+/* body{
+    background: black;
+} */
 /* -----------------------   */
 
 .titlebx{
@@ -18,14 +18,16 @@ body{
    transform: translate(-50%,-50%);
    /* background: cadetblue; */
    text-align: center;
+   color: white;
 }
 
 .titlebx .line{
     position: relative;
     height: 1px;
     width: 50px;
-    background: black;
+    background: rgb(255, 255, 255);
     left: 50%;
+    top: 4px;
     transform: translate(-50%,0);
 }
 

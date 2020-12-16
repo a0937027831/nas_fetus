@@ -40,14 +40,14 @@
     width: 124px;
     height: 160px;
     /* height: 180px; */
-    background: url(../image/works/works_logo.png) no-repeat;
+    /* background: url(../image/works/works_logo.png) no-repeat;
     background-size: contain;
-    background-position: center;
+    background-position: center; */
 }
 
 .worksbox .worksboxbg .workslogo .content{
     position: absolute;
-    top: 200px;
+    top: 115px;
     left: 50%;
     transform: translate(-50%,0%);
     height: 500px;

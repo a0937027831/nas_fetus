@@ -120,6 +120,15 @@ header ul li a:hover{
         transition: 0.5s;
     }
 
+    header.active .toggle:before{
+        background: black;
+        box-shadow:  0 10px 0 black;
+    }
+
+    header.active .toggle:after{
+        background: black;
+    }
+
     header{
         position: absolute;
         padding: 5px 50px;
