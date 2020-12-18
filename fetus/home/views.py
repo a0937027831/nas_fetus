@@ -15,7 +15,7 @@ from django.core.exceptions import ValidationError
 def home(request):
     webinfo = Webinfo.objects.all()[0]
     context = {'webinfo': webinfo}
-    return render(request,'home.html',context)
+    return render(request,'index.html',context)
 
 
 def about(request):

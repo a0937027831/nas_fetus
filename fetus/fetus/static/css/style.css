@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 1000px;
+    /* background: black; */
+}
+
+/* fixede 固定位置 */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px;
+    z-index: 1000;
+    transition: 0.6s;
+}
+
+header.sticky{
+    padding: 5px 100px;
+    background: white;
+    border-bottom: 2px solid rgba(63, 183, 253, 0.1);
+}
+
+header .logo{
+    position: relative;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+
+header ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    position: relative;
+    list-style: none;
+}
+
+/*
+text-decoration 字體修飾 = 無
+letter-spacing  字體間距
+font-weight     字體粗細程度
+*/
+header ul li a{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 300;
+    transition: 0.6s
+}
+
+header.sticky .logo,
+header.sticky ul li a
+{
+    color: rgb(0, 0, 0);
+}
+
+
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url(../static/banner/banner.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* text-transform 大小寫 uppercase都大寫
+   line-height    行高
+ */
+.banner h2{
+    position: relative;
+    top: 180px;
+    color: white;
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1em;
+}
+
+.banner h2 span{
+    color: #4978ff;
+}
+/*
+    min-height: 元素的最小高度設置為 xx 像素;
+ */
+.sec{
+    background: white;
+    padding: 100px;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec .content{
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+
+.mxw800p{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h3{
+    font-size: 40px;
+    font-weight: 200;
+    margin: 10px;
+}
+
+p{
+    position: relative;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.btn{
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    background: black;
+    text-decoration: none;
+    color: white;
+}
+
+.services{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-gap: 30px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+.services .box{
+    width: 300px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+.service .box .iconBx{
+    margin-top: 25px;
+}
+
+.services .box .iconBx img{
+    /* max-width: 70px; */
+    margin-bottom: 15px;
+    max-width:100%;
+    max-height:100%;
+}
+
+.services .box h2{
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.stats{
+    background: rgb(0, 0, 0);
+    padding-top: -250px;
+    margin-top: -250px;
+
+}
+
+.stats h3,
+.stats p{
+    color: white;
+}
+
+.statsBox{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+    grid-gap: 20px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+.statsBox h2{
+    color: white;
+    font-size: 36px;
+}
+
+.statsBox h4{
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+/*
+    grid-template-columns 這些列是使用repeat()函數定義的，最小寬度為250px，最大寬度設置為1fr
+*/
+.workBx{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 30px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+.workBx .brand{
+    position: relative;
+    background: rgb(192, 192, 192);
+    min-height: 300px;
+    width: 250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.workBx .brand:hover{
+    background: rgb(71, 71, 71);
+}
+
+.workBx .brand a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.548);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.workBx .brand:hover a{
+    color: rgba(255, 255, 255,1)
+}
+
+.teamBx{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 30px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+.teamBx .member{
+    position: relative;
+    background: white;
+    min-height: 300px;
+    width: 250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teamBx .member .imgBx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.teamBx .member .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.teamBx .member .details
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.teamBx .member:hover .details{
+    opacity: 1;
+}
+
+.teamBx .member .details h2{
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+/* display: block;
+ <span> 本身不會自動換行，但是透過加入 display:block 的語法，讓這兩組 <span> 標籤屬性改為區塊，就自動換行囉
+  */
+.teamBx .member .details h2 span{
+    display: block;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.contact{
+    background: black;
+}
+
+.contact h3,
+.contact p{
+    color:white
+}
+
+.contactForm{
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.contactForm form{
+    width: 100%;
+}
+
+.contactForm .row100{
+    display: flex;
+    width: 100%;
+}
+
+.contactForm .row100 .inputBx50
+{
+    width: 50%;
+    margin: 0 20px;
+}
+
+.contactForm .row100 .inputBx100{
+    width: 100%;
+    margin: 0 20px;
+}
+
+.contactForm .row100 input,
+.contactForm .row100 textarea{
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: white;
+    background: transparent;
+    width: 100%;
+    padding: 10px 0;
+    outline:  none;
+    font-size:  18px;
+    font-weight: 300;
+    margin: 20px 0;
+    resize: 0;
+}
+
+.contactForm .row100 textarea{
+    height: 100px;
+}
+
+.contactForm .row100 input::placeholder,
+.contactForm .row100 textarea::placeholder{
+    color:rgba(255, 255, 255, 0.5)
+}
+
+.contactForm .row100 input[type='submit']
+{
+    background: white;
+    color: #000;
+    max-width: 100px;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.sci{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.sci ul{
+    display: flex;
+}
+
+.sci ul li{
+    list-style: none;
+}
+
+.sci ul li a{
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 30px;
+}
+
+.sci ul li a img{
+    filter: invert(1);
+    max-width: 40px;
+}
+
+.sci ul li a:hover img{
+   opacity: 0.5;
+}
+
+.toggle{
+    display: none;
+}
+
+@media (max-width: 992px){
+    .toggle{
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .toggle:before{
+        content: '';
+        position: absolute;
+        top: 4px;
+        height: 2px;
+        width: 100%;
+        background: black;
+        z-index: 1;
+        box-shadow:  0 10px 0 black;
+        transition: 0.5s;
+    }
+
+    .toggle::after{
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        width: 100%;
+        height: 2px;
+        background: black;
+        z-index: 1;
+        transition: 0.5s;
+    }
+
+    header,
+    header.sticky{
+        padding: 5px 50px;
+        background: white;
+    }
+
+    /*
+        overflow: auto;　//預設會自動使用捲軸
+        visibility       元素不可見
+    */
+    header ul{
+        position: absolute;
+        top: 58px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        overflow: auto;
+        background: white;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    header.active ul{
+        padding-top: 20px;
+        visibility: visible;
+        opacity: 1;
+        display: block;
+    }
+
+    header.active ul li a{
+        display: inline-block;
+        margin: 10px 0;
+        font-size: 20px;
+    }
+
+    header .logo,
+    header ul li a{
+        color: black;
+    }
+
+    .banner{
+        background-position: center;
+    }
+
+    .banner h2{
+        font-size: 60px;
+        padding: 0 50px;
+    }
+
+    .sec{
+        padding: 100px 50px 50px 50px;
+    }
+
+    .services .box{
+        width: 100%;
+    }
+
+    .stats{
+        padding-top: 250px;
+    }
+
+    .row100{
+        flex-direction: column;
+    }
+
+    .contactForm .row100 .inputBx50,
+    .contactForm .row100 .inputBx100{
+        width: 100%;
+        margin: 0;
+    }
+
+    .sci{
+        margin: 20px;
+    }
+
+    .sci ul li a img{
+        font-size: 24px;
+    }
+}
