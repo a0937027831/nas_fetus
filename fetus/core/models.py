@@ -35,7 +35,7 @@ class Webinfo(models.Model):
     service_title_text_color = ColorField(default="#FFFFFF",help_text='服務 下方標題文字顏色')
     service_text_color = ColorField(default="#FFFFFF",help_text='服務 下方文字顏色')
     footer_text_color = ColorField(default="#FFFFFF",help_text='網頁最下方文字顏色(@2020~)')
-
+    home_bg_position = models.CharField(max_length=200,default='50%',help_text='背景位置 例:10%')
     updated_at = models.DateTimeField(auto_now=True,help_text='更新日期')
 
     class Meta:

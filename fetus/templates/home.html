@@ -67,6 +67,7 @@
     <!-- 背景 -->
     {% if webinfo.home_bg %}
         <div class="bg" style="background:url('{{ webinfo.home_bg.url }}') no-repeat; background-size: cover; background-position: center;"></div>
+        <div class="bg-moble" style="background:url('{{ webinfo.home_bg.url }}') no-repeat; background-size: cover; background-position: {{ webinfo.home_bg_position }};"></div>
     {% else %}
         <div class="bg" style="background-color: #ececec;"></div>
     {% endif %}
