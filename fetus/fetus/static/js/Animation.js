@@ -217,6 +217,22 @@ function addlist(array,str){
   }
 }
 
+// (手機電腦)主頁背景
+const bg = document.querySelector('.bg');
+const bg_moble = document.querySelector('.bg-moble');
+
+function changeObj(){
+    if(detectMob()){
+      bg.style.display="none";
+      bg_moble.style.display="unset";
+    }else{
+      bg.style.display="unset";
+      bg_moble.style.display="none";
+    }
+}
+changeObj();
+window.addEventListener('resize',changeObj,false);
+
 
 Get('https://fetus.i234.me/bannerJson');
 OpenAnimation();
