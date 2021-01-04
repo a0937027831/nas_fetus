@@ -148,7 +148,7 @@ html{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    height: 25px;
+    height: 35px;
     fill: #b3b2b1;
     transition: 0.2s linear;
 }
