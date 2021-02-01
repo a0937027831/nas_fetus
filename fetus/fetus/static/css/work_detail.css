@@ -172,6 +172,15 @@ body::-webkit-scrollbar{
 
 
 @media (max-width: 992px){
+    .toggle:before,
+    .toggle:after{
+        background: black;
+
+    }
+    .toggle:before{
+        box-shadow:  0 10px 0 rgb(0, 0, 0);
+    }
+
     .otherWorkbox{
         display: none;
     }
