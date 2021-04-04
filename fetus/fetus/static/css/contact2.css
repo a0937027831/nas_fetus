@@ -165,15 +165,19 @@ html{
 
 
 @media(max-width: 992px){
+    /* html body{
+        width:100%;
+        overflow-x:hidden;
+    } */
  
     .contactInfo{
         position: absolute;
-        width: 100%;
-        max-width: 500px;
+        width: 330px;
+        /* max-width: 500px; */
         height: 400px;
         /* background: #3498db; */
-        top: 63%;
-        left: 48%;
+        top: 55%;
+        left: 44%;
         text-align: start;
     }
 
@@ -185,11 +189,12 @@ html{
     .contactInfo .info p {
         left: 14%;
         white-space: unset;
+        font-size: 14px;
     }
 
     .contactInfo .linkIcon{
         width: 100%;
-        left: 3%;
+        left: 7%;
         top: 10%;
         transform: translate(0,0);
         text-align: start;
