@@ -172,12 +172,12 @@ html{
  
     .contactInfo{
         position: absolute;
-        width: 330px;
+        width: 300px;
         /* max-width: 500px; */
         height: 400px;
         /* background: #3498db; */
         top: 55%;
-        left: 44%;
+        left: 40%;
         text-align: start;
     }
 
@@ -187,7 +187,8 @@ html{
     }
 
     .contactInfo .info p {
-        left: 14%;
+        left: 48px;
+        width: 320px;
         white-space: unset;
         font-size: 14px;
     }
