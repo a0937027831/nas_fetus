@@ -52,10 +52,10 @@ html{
 .contactInfo{
     position: absolute;
     left: 54%;
-    top: 65%;
+    top: 63%;
     transform: translate(-50%,-50%);
     width: 500px;
-    height: 600px;
+    height: 400px;
 }
 
 .contactInfo .info{
@@ -165,13 +165,18 @@ html{
 
 
 @media(max-width: 992px){
+    html body{
+        width:100%; 
+        overflow-x:hidden;
+    }
+
     .contactInfo{
         position: absolute;
         width: 100vw;
         max-width: 500px;
-        height: 600px;
+        height: 400px;
         /* background: #3498db; */
-        top: 70%;
+        top: 63%;
         left: 48%;
         text-align: start;
     }
