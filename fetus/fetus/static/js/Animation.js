@@ -13,17 +13,13 @@ function OpenAnimation(){
     CustomEase.create("MainOpen", "M0,0 C0.128,0 0.386,0 0.438,0 0.5,0 0.525,1 0.746,1 0.874,1 0.752,1 1,1 ");
     CustomEase.create('Jump',"M0,0 C0.14,0 0.183,0.447 0.208,0.572 0.244,0.752 0.3,1.014 0.312,1.08 0.356,0.974 0.422,0.578 0.476,0.6 0.552,0.63 0.613,0.983 0.62,1 0.639,0.973 0.668,0.909 0.7,0.9 0.767,0.88 0.773,1.007 0.788,1 0.818,0.984 0.878,0.948 0.911,0.948 0.956,0.948 1,1 1,1 ")
     if(!detectMob()){
-        t1.fromTo(AnimateBG,2,{height:'50%',opacity:'1'},{height:'0%',opacity:'0.5', ease:"open" })
-        .fromTo(AnimateBG2,2,{height:'50%',opacity:'1'},{height:'0%',opacity:'0.5', ease:"open" },"-=2")
-        .fromTo(svgAnimatebx,1.5,{width:'40vw',height:'30vw'},{width:'7.4vw',height:'7.4vw',opacity:'0',ease:"open"},'+=0.5')
+        t1.fromTo(svgAnimatebx,1.5,{width:'40vw',height:'30vw'},{width:'7.4vw',height:'7.4vw',opacity:'0',ease:"open"},'+=0.5')
         .fromTo(navbar,1.5,{opacity:'0'},{opacity:'1',ease:"open"},'-=0.5')
         .fromTo(circlebx,1.5,{opacity:'0',width:'450px',height:'450px'},{opacity:'1',width:'450px',height:'450px',ease:"elastic.out(1, 0.3)"},'-=1')
         .fromTo(indicator,1.5,{opacity:'0'},{opacity:'1',ease:"open"},'-=1.5')
         .fromTo(footer,1.5,{opacity:'0'},{opacity:'1',ease:"open"},'-=2')
     }else{
-      t1.fromTo(AnimateBG,2,{height:'50%',opacity:'1'},{height:'0%',opacity:'0.5',display:'none', ease:"open" })
-        .fromTo(AnimateBG2,2,{height:'50%',opacity:'1'},{height:'0%',opacity:'0.5',display:'none', ease:"open" },"-=2")
-        .fromTo(svgAnimatebx,1.5,{width:'70vw',height:'60vw'},{width:'7.4vw',height:'7.4vw',opacity:'0',ease:"open"},'+=0.5')
+      t1.fromTo(svgAnimatebx,1.5,{width:'70vw',height:'60vw'},{width:'7.4vw',height:'7.4vw',opacity:'0',ease:"open"},'+=0.5')
         .fromTo(navbar,1.5,{opacity:'0'},{opacity:'1',ease:"open"},'-=0.5')
         .fromTo(circlebx,1.5,{opacity:'0',width:'80vw',height:'80vw'},{opacity:'1',width:'80vw',height:'80vw',ease:"elastic.out(1, 0.3)"},'-=1')
         .fromTo(indicator,1.5,{opacity:'0'},{opacity:'1',ease:"open"},'-=1.5')
@@ -32,6 +28,10 @@ function OpenAnimation(){
 }
 //#endregion
 
+// fromTo(AnimateBG,2,{height:'50%',opacity:'1'},{height:'0%',opacity:'0.5', ease:"open" })
+//         .fromTo(AnimateBG2,2,{height:'50%',opacity:'1'},{height:'0%',opacity:'0.5', ease:"open" },"-=2")
+// .fromTo(AnimateBG,2,{height:'50%',opacity:'1'},{height:'0%',opacity:'0.5',display:'none', ease:"open" })
+//         .fromTo(AnimateBG2,2,{height:'50%',opacity:'1'},{height:'0%',opacity:'0.5',display:'none', ease:"open" },"-=2")
 
 
 var imageArray = ["../static/image/banner/logo1.png","../static/image/banner/logo2.png","../static/image/banner/logo3.png"];
