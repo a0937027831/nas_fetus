@@ -9,4 +9,5 @@ urlpatterns = [
     path('sendmessage',views.sendmessage,name='sendmessage'),
     path('bannerJson',views.banner,name='banner'),
     path('changeDataLockTrue',views.changeDataLockTrue,name='changeDataLockTrue'),
+    path('changeDataLockFalse',views.changeDataLockFalse,name='changeDataLockFalse'),
 ]
