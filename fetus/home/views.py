@@ -1,10 +1,13 @@
+import re
 from django.shortcuts import render,get_object_or_404,redirect
 from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
 from rest_framework.parsers import JSONParser
 from core.models import Webinfo
+from fetus import projects
 from .models import Banner,CustomerContact
 from .serializers import BannerSerializer
+from projects.models import Project
 from django.views.decorators.http import require_http_methods
 from django.core.mail import send_mail
 from django.core.validators import validate_email
@@ -32,6 +35,18 @@ def contact(request):
     webinfo = Webinfo.objects.all()[0]
     context = {'webinfo': webinfo}
     return render(request,'contact.html',context)
+
+def changeDataLockTrue(requset):
+    all_Project = Project.objects.all()
+    all_Project.update(lock = True)
+    return render(requset)
+
+def changeDataLockFalse(requset):
+    all_Project = Project.objects.all()
+    all_Project.update(lock = False)
+    return render(requset)
+
+
 
 
 @require_http_methods(["POST"])

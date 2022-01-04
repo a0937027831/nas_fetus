@@ -8,4 +8,5 @@ urlpatterns = [
     path('contact',views.contact,name='contact'),
     path('sendmessage',views.sendmessage,name='sendmessage'),
     path('bannerJson',views.banner,name='banner'),
+    path('changeDataLockTrue',views.changeDataLockTrue,name='changeDataLockTrue'),
 ]
