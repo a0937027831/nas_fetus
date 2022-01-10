@@ -4,7 +4,6 @@ from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
 from rest_framework.parsers import JSONParser
 from core.models import Webinfo
-from fetus import projects
 from .models import Banner,CustomerContact
 from .serializers import BannerSerializer
 from projects.models import Project
