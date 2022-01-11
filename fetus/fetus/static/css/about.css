@@ -31,6 +31,7 @@ body{
     height: 160px;
     background: url(../image/works/works_logo.png) no-repeat;
     background-size: contain;
+    display: none;
 }
 
 .worksbx .line {

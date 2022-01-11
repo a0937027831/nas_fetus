@@ -54,13 +54,14 @@ body::-webkit-scrollbar{
     position: relative;
     height: 1px;
     width: 200px;
-    margin: 10px 0px;
+    margin: -1px 0px;
     background: black;
 }
 
 .workbox .wrapsroll .title{
     font-family: 'Noto Sans TC', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .workbox .wrapsroll .title,
@@ -69,7 +70,7 @@ body::-webkit-scrollbar{
 }
 
 .workbox .wrapsroll .entitle{
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 600;
 }
 
