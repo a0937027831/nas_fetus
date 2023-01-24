@@ -27,5 +27,5 @@ server {
         expires -1;  
     } 
 
-    add_header X-Proxy_Cache $upstream_cache_status always;
+    add_header X-Proxy_Cache $upstream_cache_status;
 }
