@@ -19,7 +19,7 @@ server {
         proxy_cache_valid any 10m;
     }
 
-    location ~.*\.(jpg|png|jpeg)${  
+    location ~.*\.(jpg|png|jpeg)$ {  
         expires 1d;  
     }
 
