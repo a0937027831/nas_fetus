@@ -1,6 +1,5 @@
 error_log  /var/log/nginx/error.log warn;
 
-proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=custom_cache:10m inactive=60m;
 server {
     listen ${LISTEN_PORT} ;
 
@@ -15,17 +14,5 @@ server {
         uwsgi_pass               ${APP_HOST}:${APP_PORT};
         include                  /etc/nginx/uwsgi_params;
         client_max_body_size     10M;
-        proxy_cache custom_cache;
-        proxy_cache_valid any 10m;
-        add_header X-proxy_Cache $upstream_cache_status;
     }
-
-    location ~.*\.(jpg|png|jpeg)${  
-        expires 1d;  
-    }
-
-    location ~.*\.(html|js|css)?$ {  
-        expires -1;  
-    } 
-
 }
