@@ -1,93 +1,186 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>室內設計｜辦公室設計｜室內裝修設計 | 原胚空間</title>
-    <meta name='keyword' content="室內設計師推薦,舊屋翻新,老屋翻新,商業空間設計,新屋客變,自地自建,台北設計師,室內設計,設計公司,豪宅設計,室內設計,辦公室設計,商空設計,大坪數裝潢,豪宅裝潢,小坪數裝潢,原胚空間,Yuanpei">
-    <meta name="google-site-verification" content="uxZIa_fh_4G_EvNCqpV6cVarh_YYDKm504ARTrHjPyo" />
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home.css' %} ">
-</head>
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>原胚室內裝修設計 YUANPEI INTERIOR DESIGN</title>
+    <meta
+      name="keyword"
+      content="室內設計師推薦,舊屋翻新,老屋翻新,商業空間設計,新屋客變,自地自建,台北設計師,室內設計,設計公司,豪宅設計,室內設計,辦公室設計,商空設計,大坪數裝潢,豪宅裝潢,小坪數裝潢,原胚空間,Yuanpei"
+    />
+    <meta
+      name="google-site-verification"
+      content="uxZIa_fh_4G_EvNCqpV6cVarh_YYDKm504ARTrHjPyo"
+    />
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %} " />
+  </head>
+  <body>
     <!-- 導航bar -->
     <header class="navbar">
-        <ul>
-            <li><a href="{% url 'home' %}" onclick="toggle()" style="color:{{ webinfo.home_title_color }};">HOME 首頁</a></li>
-            <li><a href="{% url 'works' %}" onclick="toggle()" style="color:{{ webinfo.home_title_color }};">WORKS 作品</a></li>
-            <li><a href="{% url 'about' %}" onclick="toggle()" style="color:{{ webinfo.home_title_color }};">ABOUT 關於</a></li>
-            <li><a href="{% url 'services' %}" onclick="toggle()" style="color:{{ webinfo.home_title_color }};">SERVICES 服務</a></li>
-            <li><a href="{% url 'contact' %}" onclick="toggle()"style="color:{{ webinfo.home_title_color }};">CONTACT 聯絡資訊</a></li>
-        </ul>
-        <div class="toggle" onclick="toggle()"></div>
+      <ul>
+        <li>
+          <a
+            href="{% url 'home' %}"
+            onclick="toggle()"
+            style="color:{{ webinfo.home_title_color }};"
+            >HOME 首頁</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'works' %}"
+            onclick="toggle()"
+            style="color:{{ webinfo.home_title_color }};"
+            >WORKS 作品</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'about' %}"
+            onclick="toggle()"
+            style="color:{{ webinfo.home_title_color }};"
+            >ABOUT 關於</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'services' %}"
+            onclick="toggle()"
+            style="color:{{ webinfo.home_title_color }};"
+            >SERVICES 服務</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'contact' %}"
+            onclick="toggle()"
+            style="color:{{ webinfo.home_title_color }};"
+            >CONTACT 聯絡資訊</a
+          >
+        </li>
+      </ul>
+      <div class="toggle" onclick="toggle()"></div>
     </header>
 
-     <!-- openAnimation -->
-     <!-- <div class="animateBx">
+    <!-- openAnimation -->
+    <!-- <div class="animateBx">
         <div class="animateBG"></div>
         <div class="animateBG2"></div>
     </div> -->
-    <div class="svgAnimatebx" id='svgAnimatebx'>
-        <div class="svgfontbx" id="svgfontbx">
-            <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="0 0 90.02 12.44" style="enable-background:new 0 0 90.02 12.44;" xml:space="preserve">
-                <style type="text/css">
-                    .st0{fill:none;stroke:#000000;stroke-width:0.1;stroke-miterlimit:10;}
-                </style>
-                <g id='font'>
-                    <path class="st0" d="M1.71,3.02h5.91v0.61H2.81v2.42h4.07v0.61H2.81v2.56h-1.1V3.02z"/>
-                    <path class="st0" d="M9.22,3.02h6.01v0.61h-4.91v2.14h4.05v0.6h-4.05v2.24h4.91v0.61H9.22V3.02z"/>
-                    <path class="st0" d="M16.09,3.02h7.13v0.62h-3.01v5.58h-1.08V3.64h-3.04V3.02z"/>
-                    <path class="st0" d="M27.96,8.7c1.54,0,2.41-0.38,2.41-1.34V3.02h1.08v4.32c0,1.42-1.24,1.97-3.5,1.97c-2.17,0-3.41-0.55-3.41-1.97
-                        V3.02h1.1v4.33C25.65,8.32,26.5,8.7,27.96,8.7z"/>
-                    <path class="st0" d="M39.35,3.68c0,0-1.98-0.15-2.81-0.15c-1.4,0-2.14,0.31-2.14,1.01c0,0.81,0.68,0.94,2.41,1.18
+    <div class="svgAnimatebx" id="svgAnimatebx">
+      <div class="svgfontbx" id="svgfontbx">
+        <svg
+          version="1.1"
+          id="圖層_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 90.02 12.44"
+          style="enable-background: new 0 0 90.02 12.44"
+          xml:space="preserve"
+        >
+          <style type="text/css">
+            .st0 {
+              fill: none;
+              stroke: #000000;
+              stroke-width: 0.1;
+              stroke-miterlimit: 10;
+            }
+          </style>
+          <g id="font">
+            <path
+              class="st0"
+              d="M1.71,3.02h5.91v0.61H2.81v2.42h4.07v0.61H2.81v2.56h-1.1V3.02z"
+            />
+            <path
+              class="st0"
+              d="M9.22,3.02h6.01v0.61h-4.91v2.14h4.05v0.6h-4.05v2.24h4.91v0.61H9.22V3.02z"
+            />
+            <path
+              class="st0"
+              d="M16.09,3.02h7.13v0.62h-3.01v5.58h-1.08V3.64h-3.04V3.02z"
+            />
+            <path
+              class="st0"
+              d="M27.96,8.7c1.54,0,2.41-0.38,2.41-1.34V3.02h1.08v4.32c0,1.42-1.24,1.97-3.5,1.97c-2.17,0-3.41-0.55-3.41-1.97
+                        V3.02h1.1v4.33C25.65,8.32,26.5,8.7,27.96,8.7z"
+            />
+            <path
+              class="st0"
+              d="M39.35,3.68c0,0-1.98-0.15-2.81-0.15c-1.4,0-2.14,0.31-2.14,1.01c0,0.81,0.68,0.94,2.41,1.18
                         c1.97,0.28,2.84,0.58,2.84,1.67c0,1.37-1.2,1.91-3.15,1.91c-1.17,0-3.12-0.2-3.12-0.2l0.11-0.57c0,0,1.94,0.16,2.95,0.16
                         c1.4,0,2.11-0.39,2.11-1.25c0-0.7-0.58-0.9-2.2-1.09c-2.04-0.28-3.07-0.58-3.07-1.76c0-1.2,1.26-1.67,3.18-1.67
-                        c1.17,0,2.98,0.18,2.98,0.18L39.35,3.68z"/>
-                    <path class="st0" d="M44.69,9.22v-6.2h3.52c2.87,0,3.65,1.25,3.65,3.01c0,1.77-0.74,3.19-3.65,3.19H44.69z M48.21,3.63h-2.43v4.98
-                        h2.43c2.05,0,2.52-1.24,2.52-2.58S50.26,3.63,48.21,3.63z"/>
-                    <path class="st0" d="M53.89,3.02h6.01v0.61h-4.91v2.14h4.05v0.6h-4.05v2.24h4.91v0.61h-6.01V3.02z"/>
-                    <path class="st0" d="M67.28,3.68c0,0-1.98-0.15-2.81-0.15c-1.4,0-2.14,0.31-2.14,1.01c0,0.81,0.68,0.94,2.41,1.18
+                        c1.17,0,2.98,0.18,2.98,0.18L39.35,3.68z"
+            />
+            <path
+              class="st0"
+              d="M44.69,9.22v-6.2h3.52c2.87,0,3.65,1.25,3.65,3.01c0,1.77-0.74,3.19-3.65,3.19H44.69z M48.21,3.63h-2.43v4.98
+                        h2.43c2.05,0,2.52-1.24,2.52-2.58S50.26,3.63,48.21,3.63z"
+            />
+            <path
+              class="st0"
+              d="M53.89,3.02h6.01v0.61h-4.91v2.14h4.05v0.6h-4.05v2.24h4.91v0.61h-6.01V3.02z"
+            />
+            <path
+              class="st0"
+              d="M67.28,3.68c0,0-1.98-0.15-2.81-0.15c-1.4,0-2.14,0.31-2.14,1.01c0,0.81,0.68,0.94,2.41,1.18
                         c1.97,0.28,2.84,0.58,2.84,1.67c0,1.37-1.2,1.91-3.15,1.91c-1.17,0-3.12-0.2-3.12-0.2l0.11-0.57c0,0,1.94,0.16,2.95,0.16
                         c1.4,0,2.11-0.39,2.11-1.25c0-0.7-0.58-0.9-2.2-1.09c-2.04-0.28-3.07-0.58-3.07-1.76c0-1.2,1.26-1.67,3.18-1.67
-                        c1.17,0,2.98,0.18,2.98,0.18L67.28,3.68z"/>
-                    <path class="st0" d="M69.48,3.02h1.1v6.2h-1.1V3.02z"/>
-                    <path class="st0" d="M76.9,6.05h2.72v3.05c-0.3,0.04-2.13,0.21-3.21,0.21c-3.02,0-3.82-1.17-3.82-3.17c0-2.06,0.83-3.21,3.8-3.21
+                        c1.17,0,2.98,0.18,2.98,0.18L67.28,3.68z"
+            />
+            <path class="st0" d="M69.48,3.02h1.1v6.2h-1.1V3.02z" />
+            <path
+              class="st0"
+              d="M76.9,6.05h2.72v3.05c-0.3,0.04-2.13,0.21-3.21,0.21c-3.02,0-3.82-1.17-3.82-3.17c0-2.06,0.83-3.21,3.8-3.21
                         c1.5,0,3.24,0.23,3.24,0.23l-0.04,0.57c0,0-1.77-0.19-3.07-0.19c-2.28,0-2.78,0.83-2.78,2.59c0,1.72,0.48,2.56,2.77,2.56
-                        c0.71,0,1.67-0.08,2.04-0.13V6.67H76.9V6.05z"/>
-                    <path class="st0" d="M81.78,3.02h2.05l3.78,5.59h0.3V3.02H89v6.2h-2.01l-3.84-5.59h-0.27v5.59h-1.1V3.02z"/>
-                </g>
-            </svg>
-        </div>
+                        c0.71,0,1.67-0.08,2.04-0.13V6.67H76.9V6.05z"
+            />
+            <path
+              class="st0"
+              d="M81.78,3.02h2.05l3.78,5.59h0.3V3.02H89v6.2h-2.01l-3.84-5.59h-0.27v5.59h-1.1V3.02z"
+            />
+          </g>
+        </svg>
+      </div>
     </div>
     <!-- openAnimation -->
 
     <!-- 背景 -->
     {% if webinfo.home_bg %}
-        <div class="bg" style="background:url('{{ webinfo.home_bg.url }}') no-repeat; background-size: cover; background-position: center;"></div>
-        <div class="bg-moble" style="background:url('{{ webinfo.home_bg.url }}') no-repeat; background-size: cover; background-position: {{ webinfo.home_bg_position }};"></div>
+    <div
+      class="bg"
+      style="background:url('{{ webinfo.home_bg.url }}') no-repeat; background-size: cover; background-position: center;"
+    ></div>
+    <div
+      class="bg-moble"
+      style="background:url('{{ webinfo.home_bg.url }}') no-repeat; background-size: cover; background-position: {{ webinfo.home_bg_position }};"
+    ></div>
     {% else %}
-        <div class="bg" style="background-color: #ececec;"></div>
+    <div class="bg" style="background-color: #ececec"></div>
     {% endif %}
     <!--  -->
 
     <div class="circlebx">
-        <div class="clip_circle"></div>
-        <div class="circleline"></div>
-        <div class="circleline2"></div>
+      <div class="clip_circle"></div>
+      <div class="circleline"></div>
+      <div class="circleline2"></div>
     </div>
 
     <!-- indicator -->
     <div class="indicator"></div>
 
     <div class="footer">
-        {% if webinfo.phone and webinfo.year %}
-            <p style="color:{{ webinfo.footer_text_color}};">@{{ webinfo.year }} 原胚設計 │TEL：{{ webinfo.phone }}│</p>
-        {% else %}
-            <p>@2020 原胚設計 │TEL： 0937-738-036│</p>
-        {% endif %}
+      {% if webinfo.phone and webinfo.year %}
+      <p style="color:{{ webinfo.footer_text_color}};">
+        @{{ webinfo.year }} 原胚設計 │TEL：{{ webinfo.phone }}│
+      </p>
+      {% else %}
+      <p>@2020 原胚設計 │TEL： 0937-738-036│</p>
+      {% endif %}
     </div>
 
     <!-- script -->
@@ -97,5 +190,5 @@
     <script src="{% static 'js/tools.js' %}"></script>
     <script src="{% static 'js/Animation.js' %}"></script>
     <!--  -->
-</body>
+  </body>
 </html>
