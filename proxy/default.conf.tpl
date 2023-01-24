@@ -1,6 +1,6 @@
 error_log  /var/log/nginx/error.log warn;
 
-proxy_cache_path /var/nginx/cache levels=1:2 keys_zone=custom_cache:10m inactive=60m;
+proxy_cache_path /etc/nginx/cache levels=1:2 keys_zone=custom_cache:10m inactive=60m;
 server {
     listen ${LISTEN_PORT} ;
 
