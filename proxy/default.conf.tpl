@@ -17,13 +17,6 @@ server {
         client_max_body_size     10M;
         proxy_cache custom_cache;
         proxy_cache_valid any 10m;
+        expires -1;
     }
-
-    location ~.*\.(jpg|png|jpeg)$ {  
-        expires 1d;  
-    }
-
-    location ~.*\.(html|js|css)?$ {  
-        expires -1;  
-    } 
 }
