@@ -17,7 +17,6 @@ server {
         client_max_body_size     10M;
         proxy_cache custom_cache;
         proxy_cache_valid any 10m;
-        add_header X-proxy_Cache $upstream_cache_status;
     }
 
     location ~.*\.(jpg|png|jpeg)${  
@@ -27,4 +26,6 @@ server {
     location ~.*\.(html|js|css)?$ {  
         expires -1;  
     } 
+
+    add_header X-Cache-Status $upstream_cache_status;
 }
