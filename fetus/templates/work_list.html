@@ -31,22 +31,25 @@
         <div class="line"></div>
         <p>{{ tag.e_title }}</p>
     </div>
-    <div class="workrow">
-        {% if projects %}
-            {% for project in projects %}
-            <a href="{% url 'works_detail' tag_id=project.project_tag.id project_id=project.id %}">
+    <div class="work_wrop">
+        <div class="workrow">
+            {% if projects %}
+                {% for project in projects %}
                 <div class="workiteam">
-                    <img src="{{ project.preview_img.url }}" alt="">
-                    <div class="details">
-                        <p>{{ project.e_title }}</p>
-                        <p>{{ project.c_title }}</p>
-                    </div>
+                    <a href="{% url 'works_detail' tag_id=project.project_tag.id project_id=project.id %}">
+                        <div class="workiteam_wrapper">
+                            <img src="{{ project.preview_img.url }}" alt="">
+                            <div class="details">
+                                <p>{{ project.e_title }}</p>
+                                <p>{{ project.c_title }}</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            {% endfor %}
-        {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
     </div>
-
     <script src="{% static 'js/navbar.js' %}"></script>
 </body>
 </html>
