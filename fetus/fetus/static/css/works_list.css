@@ -84,8 +84,8 @@
 
 .workrow .workiteam .details {
   position: absolute;
-  top: 30%;
-  left: 30%;
+  top: 130px;
+  left: 180px;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
