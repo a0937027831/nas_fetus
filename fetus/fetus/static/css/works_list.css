@@ -95,7 +95,7 @@
   visibility: hidden;
 }
 
-.workrow .workiteam .workiteam_wrapper .details:nth-child(3n) {
+.workrow .workiteam:nth-child(3n) .details {
   top: 60%;
 }
 
@@ -138,7 +138,7 @@
     padding-top: 110px;
   }
 
-  .workrow .workiteam .details:nth-child(2n) {
+  .workrow .workiteam:nth-child(2n) .details {
     top: 60%;
     left: 50%;
   }
