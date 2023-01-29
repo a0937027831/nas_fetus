@@ -95,11 +95,7 @@
   visibility: hidden;
 }
 
-.workrow .workiteam .details:nth-child(3n) {
-  top: 60%;
-}
-
-.workrow .workiteam:nth-child(3n) {
+.workrow .workiteam .workiteam_wrapper .details:nth-child(3n) {
   top: 60%;
 }
 
