@@ -138,7 +138,7 @@
     padding-top: 110px;
   }
 
-  .workrow .workiteam:nth-child(2n) {
+  .workrow .workiteam .details:nth-child(2n) {
     top: 60%;
     left: 50%;
   }
