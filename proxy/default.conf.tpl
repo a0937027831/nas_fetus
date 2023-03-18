@@ -9,6 +9,7 @@ server {
 
     location /static {
         alias /vol/static;
+        expires -1;
     }
 
     location / {
