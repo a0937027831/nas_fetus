@@ -33,22 +33,20 @@
         <!--  -->
 
       <div class="worksbox">
-          <div class="worksboxbg">
-            <div class="workslogo">
-                <div class="content">
-                    <h1 style="color:{{ webinfo.works_text_color}};">PORJECT | 作品</h1>
-                    {% if tags %}
-                        {% for tag in tags %}
-                        <a href="{% url 'works_list' tag_id=tag.id %}"><p style="color:{{ webinfo.works_text_color}};">{{ tag.e_title }}<br>{{ tag.c_title }}</p></a>
-                        {% endfor%}
-                    {% else %}
-                        <a href="{% url 'works_list' tag_id=1 %}"><p style="color:{{ webinfo.works_text_color }};">Commercial<br>商  空  設  計</p></a>
-                        <a href="{% url 'works_list' tag_id=2 %}"><p style="color:{{ webinfo.works_text_color }};">Residential<br>住  宅  設  計</p></a>
-                    {% endif %}
-                    <div class="line"></div>
-                </div>
+        <div class="workslogo">
+            <div class="content">
+                <h1 style="color:{{ webinfo.works_text_color}};">PORJECT | 作品</h1>
+                {% if tags %}
+                    {% for tag in tags %}
+                    <a href="{% url 'works_list' tag_id=tag.id %}"><p style="color:{{ webinfo.works_text_color}};">{{ tag.e_title }}<br>{{ tag.c_title }}</p></a>
+                    {% endfor%}
+                {% else %}
+                    <a href="{% url 'works_list' tag_id=1 %}"><p style="color:{{ webinfo.works_text_color }};">Commercial<br>商  空  設  計</p></a>
+                    <a href="{% url 'works_list' tag_id=2 %}"><p style="color:{{ webinfo.works_text_color }};">Residential<br>住  宅  設  計</p></a>
+                {% endif %}
+                <div class="line"></div>
             </div>
-          </div>
+        </div>
       </div>
       <div class="footer">
             {% if webinfo.phone and webinfo.year %}
