@@ -11,6 +11,10 @@ body{
     overflow: hidden;
 }
 
+.bg{
+    background-color: #FAFAF5;
+}
+
 .worksbx{
     position: absolute;
     left: 33%;
