@@ -13,7 +13,7 @@
     <body >
     <!-- 背景 -->
     {% if webinfo.about_bg %}
-        <div class="bg" style="background:url('{{ webinfo.about_bg.url }}') no-repeat; background-size: cover; background-position: center;"></div>
+        <div class="bg" style="background:url('{{ webinfo.about_bg.url }}') no-repeat; background-size: contain; background-position: center;"></div>
     {% else %}
         <div class="bg" style="background-color: #000000;"></div>
     {% endif %}
@@ -33,7 +33,7 @@
 
     <!-- 內容 -->
     <div class="worksbx">
-        <div class="logo"></div>
+        <!-- <div class="logo"></div>
         <div class="line"></div>
         <div class="text">
             <h3 style="color:{{ webinfo.about_title_text_color }};">理念</h3>
@@ -54,7 +54,7 @@
                 原  不過度設計，而是感受事物的本質<br>
                 胚  醞釀打磨，為了創作最好的
             </p>
-        </div>
+        </div> -->
         <div class="footer">
             {% if webinfo.phone and webinfo.year %}
                 <p style="color:{{ webinfo.footer_text_color}};">@{{ webinfo.year }} 原胚設計 │TEL：{{ webinfo.phone }}│</p>
