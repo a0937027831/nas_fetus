@@ -1,55 +1,93 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>室內設計 | 辦公室設計 | 室內裝修設計 | 原胚空間 | 作品列表</title>
-    <meta name='keyword' content="室內設計師推薦,舊屋翻新,老屋翻新,商業空間設計,新屋客變,自地自建,台北設計師,室內設計,設計公司,豪宅設計,室內設計,辦公室設計,商空設計,大坪數裝潢,豪宅裝潢,小坪數裝潢,原胚空間">
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-    <link rel="stylesheet" href="{% static 'css/works_list.css' %}">
-</head>
-    <body>
+    <meta
+      name="keyword"
+      content="室內設計師推薦,舊屋翻新,老屋翻新,商業空間設計,新屋客變,自地自建,台北設計師,室內設計,設計公司,豪宅設計,室內設計,辦公室設計,商空設計,大坪數裝潢,豪宅裝潢,小坪數裝潢,原胚空間"
+    />
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/works_list.css' %}" />
+  </head>
+  <body>
     <!-- 背景 -->
-    <body style="background-color: rgb(26, 26, 26);"></body>
+    <body style="background-color: rgb(26, 26, 26)"></body>
     <!--  -->
 
     <!-- 導航bar -->
     <header class="navbar">
-        <ul>
-            <li><a href="{% url 'home' %}" onclick="toggle()" style="color:{{ webinfo.work_list_title_color }};">HOME 首頁</a></li>
-            <li><a href="{% url 'works' %}" onclick="toggle()" style="color:{{ webinfo.work_list_title_color }};">WORKS 作品</a></li>
-            <li><a href="{% url 'about' %}" onclick="toggle()" style="color:{{ webinfo.work_list_title_color }};">ABOUT 關於</a></li>
-            <li><a href="{% url 'services' %}" onclick="toggle()" style="color:{{ webinfo.work_list_title_color }};">SERVICES 服務</a></li>
-            <li><a href="{% url 'contact' %}" onclick="toggle()"style="color:{{ webinfo.work_list_title_color }};">CONTACT 聯絡資訊</a></li>
-        </ul>
-            <div class="toggle" onclick="toggle()"></div>
+      <ul>
+        <li>
+          <a
+            href="{% url 'home' %}"
+            onclick="toggle()"
+            style="color:{{ webinfo.work_list_title_color }};"
+            >HOME 首頁</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'works' %}"
+            onclick="toggle()"
+            style="color:{{ webinfo.work_list_title_color }};"
+            >WORKS 作品</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'about' %}"
+            onclick="toggle()"
+            style="color:{{ webinfo.about_title_color }};"
+            >AWARDS 獲獎經歷</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'services' %}"
+            onclick="toggle()"
+            style="color:{{ webinfo.work_list_title_color }};"
+            >SERVICES 服務</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'contact' %}"
+            onclick="toggle()"
+            style="color:{{ webinfo.work_list_title_color }};"
+            >CONTACT 聯絡資訊</a
+          >
+        </li>
+      </ul>
+      <div class="toggle" onclick="toggle()"></div>
     </header>
 
     <div class="titlebx">
-        <h1>{{ tag.c_title }}</h1>
-        <div class="line"></div>
-        <p>{{ tag.e_title }}</p>
+      <h1>{{ tag.c_title }}</h1>
+      <div class="line"></div>
+      <p>{{ tag.e_title }}</p>
     </div>
     <div class="work_wrop">
-        <div class="workrow">
-            {% if projects %}
-                {% for project in projects %}
-                <div class="workiteam">
-                    <a href="{% url 'works_detail' tag_id=project.project_tag.id project_id=project.id %}">
-                        <div class="workiteam_wrapper">
-                            <img src="{{ project.preview_img.url }}" alt="">
-                            <div class="details">
-                                <p>{{ project.e_title }}</p>
-                                <p>{{ project.c_title }}</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                {% endfor %}
-            {% endif %}
+      <div class="workrow">
+        {% if projects %} {% for project in projects %}
+        <div class="workiteam">
+          <a
+            href="{% url 'works_detail' tag_id=project.project_tag.id project_id=project.id %}"
+          >
+            <div class="workiteam_wrapper">
+              <img src="{{ project.preview_img.url }}" alt="" />
+              <div class="details">
+                <p>{{ project.e_title }}</p>
+                <p>{{ project.c_title }}</p>
+              </div>
+            </div>
+          </a>
         </div>
+        {% endfor %} {% endif %}
+      </div>
     </div>
     <script src="{% static 'js/navbar.js' %}"></script>
-</body>
+  </body>
 </html>
