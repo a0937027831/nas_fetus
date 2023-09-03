@@ -9,11 +9,11 @@
 }
 p {
   font-family: "Noto Sans TC", sans-serif;
-  color: white;
+  color: white !important;
 }
 a {
   text-decoration: none;
-  color: white;
+  color: white !important;
 }
 .bg {
   background-color: black;

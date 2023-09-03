@@ -18,9 +18,13 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- 背景 -->
     {% if webinfo.about_bg %}
-        <div class="bg" style="background:url('{{ webinfo.about_bg.url }}') no-repeat; background-size: cover; background-position: center; background-color: black;"></div>
+        <div class="bg" style="background:url('{{ webinfo.about_bg.url }}') no-repeat; background-size: cover; background-position: center; background-color: black;">
+          {% include 'partials/_home_worksbox.html' %}
+        </div>
     {% else %}
-        <div class="bg" style="background-color: #000000;"></div>
+        <div class="bg" style="background-color: #000000;">
+          {% include 'partials/_home_worksbox.html' %}
+        </div>
     {% endif %}
     <!--  -->
 
@@ -37,99 +41,6 @@
     </header>
 
     <!-- 內容 -->
-    <div class="worbox">
-      <!-- src="{% static '/images/cat.jpg' %}" -->
-        <div class="wrapper1">
-          <img src="{% static '/image/about/人物.jpg' %}" alt="" />
-          <div class="info">
-            <span style="color: white;">周泊杰</span>
-            <span class="gray">Pao Chieh</span>
-            <p class="gray">原胚設計 總監</p>
-          </div>
-        </div>
-        <div class="wrapper2">
-          <div class="company_info_cn">
-            <p class="company_cn_title">原胚設計</p>
-            <p class="company_cn_content gray">
-              成立於2021年的原胚設計,希望能創造不受限於固有思維的空間,賦予空
-              間內涵及永續,以功能需求為前提,讓客戶享受最棒的舒適體驗。
-              追求空間意義內涵，感受事物的本質 -「原」。
-              醞釀打磨，將每件作品不斷打磨修正，最後臻至完美-「胚」。
-            </p>
-          </div>
-          <div class="company_info_en">
-            <p class="company_en_title">Central Idea</p>
-            <p class="company_en_content gray">
-              Yuanpei interior DecorationCo., Ltd. was originally founded by a
-              young man who loves interior design. After being cultivated by the
-              industry, he has accumulated professional qualities and personal
-              characteristics. Starting from the drawing, we care about the
-              weight and thickness of each line. The picture should be clean and
-              concise, clearly expressing the construction details and
-              dimensional logic. In terms of design, we integrate the needs of
-              customers, integrate design elements into it, and create exclusive
-              works for users.
-            </p>
-          </div>
-          <div class="winner_info">
-            <p class="winner_title">獲獎經歷</p>
-            <p class="gray">￭ Muse Design Awards 住宅空間銀獎（2022）</p>
-            <p class="gray">￭ 義大利A' Design Award 工作空間銀獎（2023）</p>
-            <p class="gray">￭ 義大利A' Design Award 工作空間銅獎（2023）</p>
-            <p class="gray">￭ TINTA 金邸獎（2023）</p>
-          </div>
-          <div class="swiper-container mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="{% static '/image/about/得獎1.png' %}" alt="" />
-              </div>
-              <div class="swiper-slide">
-                <img src="{% static '/image/about/得獎2.png' %}" alt="" />
-              </div>
-              <div class="swiper-slide">
-                <img src="{% static '/image/about/得獎3.png' %}" alt="" />
-              </div>
-              <div class="swiper-slide">
-                <img src="{% static '/image/about/得獎4.png' %}" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper3">
-          <p class="winner_title">媒體雜誌報導</p>
-          <a
-            class="gray"
-            href="https://www.interior-mj.com.tw/index.php?action=indoorFocusCase&id=469"
-            target="_blank"
-          >
-            ￭《室內interior》-第359期/蘊巢。
-          </a>
-          <a
-            class="gray"
-            href="https://www.100.com.tw/article/4180"
-            target="_blank"
-          >
-            ￭《100室內設計》-頂樓還能這樣改造 !
-          </a>
-          <a
-            class="gray"
-            href="https://www.100.com.tw/article/6219"
-            target="_blank"
-          >
-            ￭《100室內設計》-將涵洞搬進診所！自由曲面的涵洞美學
-          </a>
-          <a
-            class="gray"
-            href="https://www.we-heart.com/2023/06/12/a-design-award-2024-early-call-for-entries/"
-            target="_blank"
-          >
-            ￭&nbsp;&nbsp;義大利媒體 WeHeart報導- A' Design Award 徵集
-          </a>
-          <div class="magazine_img">
-            <img src="{% static '/image/about/雜誌1.png' %}" alt="" />
-          </div>
-        </div>
-    </div>
     <div class="footer">
         {% if webinfo.phone and webinfo.year %}
             <p style="color:{{ webinfo.footer_text_color}};">@{{ webinfo.year }} 原胚設計 │TEL：{{ webinfo.phone }}│</p>
