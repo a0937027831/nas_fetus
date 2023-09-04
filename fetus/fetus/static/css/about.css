@@ -83,12 +83,15 @@ a {
   height: 200px;
   overflow-y: scroll;
   margin: 10px 0px;
+  
 }
 .winner_info::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
-.winner_title {
+.winner_title,
+.winner_info {
   font-size: 18px;
+  letter-spacing: 5px;
 }
 .winner_title p,
 .winner_title a{
