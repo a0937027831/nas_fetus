@@ -88,8 +88,13 @@ a {
   display: none; /* for Chrome, Safari, and Opera */
 }
 .winner_title {
-  font-size: 24px;
+  font-size: 18px;
 }
+.winner_title p,
+.winner_title a{
+  font-size: 12px;
+}
+
 .swiper-container {
   position: relative;
   width: 100%;
