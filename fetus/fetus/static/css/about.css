@@ -87,13 +87,12 @@ a {
 .winner_info::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
-.winner_title,
-.winner_info {
+.winner_title{
   font-size: 18px;
   letter-spacing: 5px;
 }
-.winner_title p,
-.winner_title a{
+
+.winner_info p{
   font-size: 12px;
   letter-spacing: 3px;
 }
@@ -122,7 +121,10 @@ a {
 .wrapper3 a {
   display: block;
   margin: 5px 0px;
+  font-size: 12px;
+  letter-spacing: 3px;
 }
+
 .magazine_img img {
   width: 100%;
   height: auto;
