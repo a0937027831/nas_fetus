@@ -23,7 +23,6 @@ a {
   width: 100%;
   transform: none;
   background-color: black;
-  z-index: -1;
 }
 .worbox {
   padding: 9.375rem 0px 3.125rem;
@@ -96,6 +95,7 @@ a {
 .winner_title p,
 .winner_title a{
   font-size: 12px;
+  letter-spacing: 3px;
 }
 
 .swiper-container {
