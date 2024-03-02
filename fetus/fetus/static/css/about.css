@@ -30,7 +30,7 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  height: 100%;
+  height: 100vh;
 }
 .wrapper1,
 .wrapper2,
@@ -139,7 +139,12 @@ a {
     margin-bottom: 15px;
   }
   .worbox {
+    padding: 10% 0%;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+  }
+  .footer{
+    position: relative;
   }
 }
