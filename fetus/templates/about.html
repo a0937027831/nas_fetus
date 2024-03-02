@@ -26,7 +26,7 @@
               <li><a href="{% url 'services' %}" onclick="toggle()" style="color:{{ webinfo.about_title_color }};">SERVICES 服務</a></li>
               <li><a href="{% url 'contact' %}" onclick="toggle()"style="color:{{ webinfo.about_title_color }};">CONTACT 聯絡資訊</a></li>
           </ul>
-              <div class="toggle" onclick="toggle()"></div>
+          <div class="toggle" onclick="toggle()"></div>
       </header>
 
       <!-- 內容 -->
@@ -132,12 +132,12 @@
             </div>
           </div>
       </div>
-      <!-- <div class="footer"> -->
-          {% if webinfo.phone and webinfo.year %}
-              <p style="color:{{ webinfo.footer_text_color}};">@{{ webinfo.year }} 原胚設計 │TEL：{{ webinfo.phone }}│</p>
-          {% else %}
-              <p>@2020 原胚設計 │TEL： 0937-738-036│</p>
-          {% endif %}
+      <div class="footer">
+        {% if webinfo.phone and webinfo.year %}
+            <p style="color:{{ webinfo.footer_text_color}};">@{{ webinfo.year }} 原胚設計 │TEL：{{ webinfo.phone }}│</p>
+        {% else %}
+            <p>@2020 原胚設計 │TEL： 0937-738-036│</p>
+        {% endif %}
       </div>
     </div>
     <!-- <div class="blackbg"></div> -->
