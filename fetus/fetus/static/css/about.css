@@ -30,6 +30,7 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  height: 100%;
 }
 .wrapper1,
 .wrapper2,
@@ -56,25 +57,16 @@ a {
   color: white;
   font-size: 1rem;
 }
-.wrapper2 .company_cn_title{
-  letter-spacing: 5px;
-}
-.wrapper2 .company_cn_content{
-  letter-spacing: 3px;
-}
 
-.wrapper2 .company_cn_title,
 .wrapper2 .company_en_title {
   font-size: 18px;
   margin-bottom: 3px;
 }
-.wrapper2 .company_cn_content,
+
 .wrapper2 .company_en_content {
   font-size: 12px;
 }
-.company_info_cn {
-  margin: 0px 0px 10px 0px;
-}
+
 .company_info_en {
   margin: 10px 0px;
 }
@@ -133,11 +125,6 @@ a {
   margin-top: 9.375rem;
 }
 
-.footer {
-  bottom: -65%;
-  transform: translate(-50%, -50%);
-  left: 30vw;
-}
 
 @media (max-width: 992px) {
   .wrapper1,
@@ -154,11 +141,5 @@ a {
   .worbox {
     flex-direction: column;
     align-items: center;
-  }
-
-  .footer {
-    position: relative;
-    left: 50%;
-    bottom: 0;
   }
 }
