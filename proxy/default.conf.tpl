@@ -19,9 +19,3 @@ server {
         expires               -1;
     }
 }
-
-server {
-    listen      ${LISTEN_PORT};
-    server_name fetus.i234.me;
-    return      301 $scheme://${SERVER_NAME}$request_uri;
-}
