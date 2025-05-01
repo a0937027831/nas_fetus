@@ -4,10 +4,7 @@ proxy_cache_path /etc/nginx/cache levels=1:2 keys_zone=custom_cache:10m inactive
 server {
     listen ${LISTEN_PORT} ;
     server_name  ${SERVER_NAME} www.${SERVER_NAME};
-
-    ssl_certificate             /etc/nginx/ssl/${SERVER_NAME}/cert.pem;
-    ssl_certificate_key         /etc/nginx/ssl/${SERVER_NAME}/privkey.pem;
-
+    
     location /static {
         alias /vol/static;
         expires -1;
