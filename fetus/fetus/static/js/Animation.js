@@ -234,7 +234,7 @@ changeObj();
 window.addEventListener('resize',changeObj,false);
 
 
-Get('https://fetus.i234.me/bannerJson');
+Get('https://yuan-pei.com//bannerJson');
 OpenAnimation();
 setTimeout(() => { RemoveStyle(); }, 6000);
 
