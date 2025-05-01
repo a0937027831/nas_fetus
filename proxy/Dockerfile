@@ -5,19 +5,20 @@ COPY ./default.conf.tpl /etc/nginx/default.conf.tpl
 COPY ./uwsgi_params /etc/nginx/uwsgi_params
 
 ENV LISTEN_PORT=8000
-ENV APP_HOST=fetus
+ENV APP_HOST=${SERVER_NAME}
 ENV APP_PORT=9000
+ENV SERVER_NAME=yuan-pei.com
 
 USER root
 
 RUN mkdir -p /vol/static
-RUN mkdir -p /etc/nginx/ssl/fetus
+RUN mkdir -p /etc/nginx/ssl/${SERVER_NAME}
 RUN mkdir -p /etc/nginx/cache
-COPY ./archive/cert.pem /etc/nginx/ssl/fetus/cert.pem
-COPY ./archive/privkey.pem /etc/nginx/ssl/fetus/privkey.pem
+COPY ./archive/cert.pem /etc/nginx/ssl/${SERVER_NAME}/cert.pem
+COPY ./archive/privkey.pem /etc/nginx/ssl/${SERVER_NAME}/privkey.pem
 RUN chmod 755 /vol/static
 RUN touch /etc/nginx/conf.d/default.conf
-RUN chown nginx:nginx /etc/nginx/conf.d/default.conf /etc/nginx/ssl/fetus/cert.pem /etc/nginx/ssl/fetus/privkey.pem
+RUN chown nginx:nginx /etc/nginx/conf.d/default.conf /etc/nginx/ssl/${SERVER_NAME}/cert.pem /etc/nginx/ssl/${SERVER_NAME}/privkey.pem
 
 
 

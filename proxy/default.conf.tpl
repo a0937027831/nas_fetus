@@ -1,11 +1,12 @@
 error_log  /var/log/nginx/error.log warn;
-
 proxy_cache_path /etc/nginx/cache levels=1:2 keys_zone=custom_cache:10m inactive=60m;
+
 server {
     listen ${LISTEN_PORT} ;
+    server_name  ${SERVER_NAME} www.${SERVER_NAME};
 
-    ssl_certificate             /etc/nginx/ssl/fetus/cert.pem;
-    ssl_certificate_key         /etc/nginx/ssl/fetus/privkey.pem;
+    ssl_certificate             /etc/nginx/ssl/${SERVER_NAME}/cert.pem;
+    ssl_certificate_key         /etc/nginx/ssl/${SERVER_NAME}/privkey.pem;
 
     location /static {
         alias /vol/static;
@@ -13,11 +14,17 @@ server {
     }
 
     location / {
-        uwsgi_pass               ${APP_HOST}:${APP_PORT};
-        include                  /etc/nginx/uwsgi_params;
-        client_max_body_size     10M;
-        proxy_cache custom_cache;
-        proxy_cache_valid any 10m;
-        expires -1;
+        include               /etc/nginx/uwsgi_params;
+        uwsgi_pass            ${APP_HOST}:${APP_PORT};
+        client_max_body_size  10M;
+        proxy_cache           custom_cache;
+        proxy_cache_valid     any 10m;
+        expires               -1;
     }
+}
+
+server {
+    listen      ${LISTEN_PORT};
+    server_name fetus.i234.me;
+    return      301 $scheme://${SERVER_NAME}$request_uri;
 }

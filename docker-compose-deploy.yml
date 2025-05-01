@@ -28,6 +28,11 @@ services:
             - "8000:8000"
         depends_on:
             - fetus
+        environment:
+            - LISTEN_PORT=8000
+            - APP_HOST=fetus
+            - APP_PORT=9000
+            - SERVER_NAME=yuan-pei.com
 
     db:
       image: postgres:12-alpine
