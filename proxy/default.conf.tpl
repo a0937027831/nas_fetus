@@ -4,7 +4,7 @@ proxy_cache_path /etc/nginx/cache levels=1:2 keys_zone=custom_cache:10m inactive
 
 # 這段放最上面，priority 最高
 server {
-    listen       ${LISTEN_PORT};
+    listen 8001;
     server_name  fetus.i234.me;
 
     # 所有請求直接重導到主站
