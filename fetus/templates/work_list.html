@@ -12,12 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
     <link rel="stylesheet" href="{% static 'css/works_list.css' %}" />
   </head>
-  <body>
-    <!-- 背景 -->
-    <body style="background-color: rgb(26, 26, 26)"></body>
-    <!--  -->
-
-    <!-- 導航bar -->
+  <body style="background-color: rgb(26, 26, 26);"> {/* <-- 背景色移到這裡，並移除內部的空 body 標籤 */}
     <header class="navbar">
       <ul>
         <li>
@@ -74,10 +69,10 @@
         {% if projects %} {% for project in projects %}
         <div class="workiteam">
           <a
-            href="{% url 'works_detail' tag_id=project.project_tag.id project_id=project.id %}"
+            href="{% url 'works_detail' tag_id=project.project_tag.id project_slug=project.slug %}" 
           >
             <div class="workiteam_wrapper">
-              <img src="{{ project.preview_img.url }}" alt="" />
+              <img src="{{ project.preview_img.url }}" alt="{{ project.c_title }} - {{ project.e_title }}" /> 
               <div class="details">
                 <p>{{ project.e_title }}</p>
                 <p>{{ project.c_title }}</p>
