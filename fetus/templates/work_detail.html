@@ -43,9 +43,7 @@
       <div class="wrapsroll" data-simplebar>
         {% for p in other_projects %}
           <div class="iteam">
-            <a href="{% url 'works_detail'
-                           tag_id=p.project_tag.id
-                           project_slug=p.slug %}">
+            <a href="{% url 'works_detail' tag_id=p.project_tag.id project_slug=p.slug %}">
               <img src="{{ p.preview_img.url }}" alt="{{ p.c_title }}" />
               <div class="details">
                 <h2>{{ p.c_title }}</h2>
