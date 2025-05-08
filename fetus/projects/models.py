@@ -42,7 +42,7 @@ class Project(models.Model):
     lock = models.BooleanField(default=False,help_text="隱藏專案")
     created_at = models.DateTimeField(auto_now_add=True,help_text='創建日期')
     updated_at = models.DateTimeField(auto_now=True,help_text='更新日期')
-    slug = models.SlugField("網址識別碼", max_length=200,unique=True,allow_unicode=True,blank=True, null=True)
+    slug = models.SlugField("網址識別碼", max_length=200,unique=True,allow_unicode=True,blank=True)
 
     def __str__(self):
         return self.c_title
