@@ -1,62 +1,58 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>室內設計 | 辦公室設計 | 室內裝修設計 | 原胚空間 | 作品</title>
+    <!-- 動態 title -->
+    <title>{{ project.c_title }} | 原胚室內設計裝修</title>
+
     <link rel="stylesheet" href="{% static 'css/lightbox.css' %}" />
     <link rel="stylesheet" href="{% static 'css/simplebar.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
     <link rel="stylesheet" href="{% static 'css/work_detail.css' %}" />
   </head>
-  <body>
-    <!-- 導航bar -->
-    {% include 'partials/_navbar.html'%}
 
+  <body>
+    <!-- 導航 bar -->
+    {% include 'partials/_navbar.html' %}
+
+    <!-- 當前作品區塊 -->
     <div class="workbox">
       <div class="wrapsroll" data-simplebar>
-        {% for project in projects %} {% if project.id == project_id %}
         <h3 class="title">{{ project.c_title }}</h3>
         <div class="line"></div>
         <h1 class="entitle">{{ project.e_title }}</h1>
         <p class="content">{{ project.body|safe }}</p>
+
         {% for img in project.images.all %}
-        <a
-          href="{{ img.image.url }}"
-          data-lightbox="mygallery"
-          data-title="{{ img.title }}"
-        >
-          <img src="{{ img.image.url }}" />
-        </a>
+          <a href="{{ img.image.url }}"
+             data-lightbox="mygallery"
+             data-title="{{ img.title }}">
+            <img src="{{ img.image.url }}" alt="{{ img.title }}" />
+          </a>
         {% endfor %}
-        <a
-          href="{% url 'works_list' tag_id=project.project_tag.id %}"
-          style="cursor: pointer"
-          onclick=""
-          class="btn"
-          >Back</a
-        >
-        {% endif %} {% endfor%}
+
+        <a href="{% url 'works_list' tag_id=project.project_tag.id %}"
+           class="btn">Back</a>
       </div>
     </div>
 
+    <!-- 其他作品區塊 -->
     <div class="otherWorkbox">
       <div class="wrapsroll" data-simplebar>
-        {% for project in projects %} {% if project.id is not project_id %}
-        <div class="iteam">
-          <a
-            href="{% url 'works_detail' tag_id=project.project_tag.id project_id=project.id %}"
-          >
-            <img src="{{ project.preview_img.url }}" />
-            <div class="details">
-              <div>
-                <h2>{{ project.c_title }}</h2>
+        {% for p in other_projects %}
+          <div class="iteam">
+            <a href="{% url 'works_detail'
+                           tag_id=p.project_tag.id
+                           project_slug=p.slug %}">
+              <img src="{{ p.preview_img.url }}" alt="{{ p.c_title }}" />
+              <div class="details">
+                <h2>{{ p.c_title }}</h2>
               </div>
-            </div>
-          </a>
-        </div>
-        {% endif %} {% endfor %}
+            </a>
+          </div>
+        {% endfor %}
       </div>
     </div>
 
