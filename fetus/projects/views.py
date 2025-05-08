@@ -42,7 +42,7 @@ def works_detail(request, tag_id, project_slug):
     )
 
     # 排除目前這個 project，列出其他作品
-    other_projects = Project.objects.exclude(id=project.id)
+    other_projects = Project.objects.filter(lock=False).exclude(id=project.id)
 
     return render(request, 'work_detail.html', {
         'project': project,
