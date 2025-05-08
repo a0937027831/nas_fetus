@@ -37,10 +37,16 @@ services:
 
     db:
       image: postgres:12-alpine
+      volumes:
+        - fetus_postgres_data:/var/lib/postgresql/data  # <--- 使用新的 Named Volume
       environment:
         - POSTGRES_DB=fetus
         - POSTGRES_USER=postgres
         - POSTGRES_PASSWORD=supersecretpassword
+      # 如果您的 PostgreSQL 需要特定的啟動參數或設定檔，可以在這裡添加
+      restart: unless-stopped # 建議加上，容器意外停止會自動重啟
+
 
 volumes:
+    fetus_postgres_data: {} # 新的資料庫 named volume
     static_data:
