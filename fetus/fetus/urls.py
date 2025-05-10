@@ -18,8 +18,21 @@ from django.urls import path , include
 from django.conf.urls.static import static
 from django.conf import settings
 
+def robots_txt_view(request):
+    lines = [
+        "User-agent: *",
+        "Allow: /", # 或者 "Disallow:" 來允許所有
+        # 如果您想禁止某些目錄，可以這樣寫：
+        "Disallow: /admin/",
+        # "Disallow: /private/",
+        # 如果您有 sitemap，可以加入這行：
+        "Sitemap: https://yuan-pei.com/static/static/xml/sitemap.xml",
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home.urls')),
     path('',include('projects.urls')),
+    path('robots.txt', robots_txt_view), # <--- 新增這行來處理 robots.txt
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
