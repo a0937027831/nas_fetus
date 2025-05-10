@@ -17,18 +17,18 @@ from django.contrib import admin
 from django.urls import path , include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.http import HttpResponse
+
 
 def robots_txt_view(request):
-    lines = [
-        "User-agent: *",
-        "Allow: /", # 或者 "Disallow:" 來允許所有
-        # 如果您想禁止某些目錄，可以這樣寫：
-        "Disallow: /admin/",
-        # "Disallow: /private/",
-        # 如果您有 sitemap，可以加入這行：
-        "Sitemap: https://yuan-pei.com/static/static/xml/sitemap.xml",
-    ]
-    return HttpResponse("\n".join(lines), content_type="text/plain")
+    # 直接將多行字串組合起來，用 \n 分隔
+    robots_content = (
+        "User-agent: *\n"
+        "Allow: /\n" # 或者 "Disallow:"
+        "Disallow: /admin/\n" # 禁止 admin 路徑
+        "Sitemap: https://yuan-pei.com/static/static/xml/sitemap.xml" # 您的 sitemap 路徑
+    )
+    return HttpResponse(robots_content, content_type="text/plain")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
